@@ -1,0 +1,65 @@
+---
+import clsx from "clsx";
+import { getEntry, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { getTitle } from "../utils";
+
+interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id } = Astro.props;
+const recipe = await getEntry("recipes", id);
+if (!recipe) {
+  throw new Error("no recipe");
+}
+
+const { title, author, ingredients, notes } = recipe.data;
+const { Content } = await render(recipe);
+---
+
+<article class={clsx("break-inside-avoid", Astro.props.class)}>
+  <div class="mb-8">
+    <h2 class="capitalize h1 mb-0">{title || getTitle(id)}</h2>
+    <p class="italic flex items-center gap-[1ch]">
+      <Icon name="lucide:heart" class="text-lg" />
+      From {author}&apos;s kitchen
+    </p>
+  </div>
+  <div class="flex flex-col md:flex-row items-stretch gap-8">
+    <div class="basis-0 grow-1 max-w-max">
+      <h3 class="h2">Ingredients</h3>
+      {
+        Array.isArray(ingredients) ? (
+          <ul>
+            {ingredients.map((ingredient) => (
+              <li class="flex items-baseline gap-1.5">
+                {/* <Underline class="flex-none w-4"/> */}
+                <span>-</span>
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          Object.entries(ingredients).map(([section, sectionIngredients]) => (
+            <div>
+              <p class="capitalize">{section}</p>
+              <ul>
+                {sectionIngredients.map((ingredient) => (
+                  <li>{ingredient}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        )
+      }
+      {notes && <p>{notes}</p>}
+    </div>
+    <div class="hidden md:block bg-text opacity-50 basis-0.5"></div>
+    <div class="basis-0 grow-2">
+      <h3 class="h2">Directions</h3>
+      <Content />
+    </div>
+  </div>
+</article>

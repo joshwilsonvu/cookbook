@@ -1,0 +1,33 @@
+---
+import * as _ from "lodash-es";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { getTitle } from "../utils";
+import Recipe from "../components/Recipe.astro";
+
+const categories = _.sortBy(
+  await getCollection("categories"),
+  (category) => category.data.order ?? 0
+);
+const recipes = await getCollection("recipes");
+
+const recipesByCategory = _.groupBy(
+  recipes,
+  (recipe) => recipe.data.category.id
+);
+---
+
+<Layout title="Our kitchen table">
+  <div class="flex flex-col gap-32">
+    {
+      categories.map((category) => (
+        <>
+          <h2 class="h1">{category.data.title || getTitle(category.id)}</h2>
+          {recipesByCategory[category.id]?.map((recipe) => (
+            <Recipe id={recipe.id} class="break-before-page" />
+          )) ?? []}
+        </>
+      ))
+    }
+  </div>
+</Layout>
