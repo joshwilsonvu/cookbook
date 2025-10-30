@@ -1,23 +1,21 @@
-**Mom's Arroz con Gandules**
-
-**Ingredients:**
-
-- 2 cups rice (long grain), rinsed
-- 4 cups water
-- 16 ounce can gandules (cooked green pigeon peas)
-- 2 tablespoons alcaparado (mix of olives and capers)
-- 1 can tomato sauce
-- 3 tablespoons oil
-- 1 medium onion
-- 2-4 garlic cloves
-- 6 branches cilantro
-- ½ pound pork loin (optional)
-- 1 can pimientos morrones (cooked red peppers)
-- 1 green pepper
-- 1 fresh tomato
-
-**Preparation:**
-
+---
+category: mains
+author: Mom
+ingredients:
+  - 2 cups rice (long grain), rinsed
+  - 4 cups water
+  - 16 ounce can gandules (cooked green pigeon peas)
+  - 2 tablespoons alcaparado (mix of olives and capers)
+  - 1 can tomato sauce
+  - 3 tablespoons oil
+  - 1 medium onion
+  - 2-4 garlic cloves
+  - 6 branches cilantro
+  - ½ pound pork loin (optional)
+  - 1 can pimientos morrones (cooked red peppers)
+  - 1 green pepper
+  - 1 fresh tomato
+---
 1. Heat oil in a medium heavy pan over medium heat. Cook marinated pork (if using) until golden brown.
 2. Add onion and cook until softened.
 3. Add green pepper, mashed garlic, cilantro, and fresh tomato.

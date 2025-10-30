@@ -1,34 +1,32 @@
-**Dad's Chicken Curry**
-
-**Ingredients:**
-
-- 3-4 lbs Chicken (mixture of legs and thighs)
-- 48 spoons Yogurt
-- Curry Powder (amount not specified)
-- Ginger Powder (amount not specified)
-- Cumin Powder (amount not specified)
-- 2 Yellow Onions, chopped
-- Green Peppers, chopped
-- 2-3 inch Ginger Root, finely chopped
-- 2-3 Garlic Cloves, minced
-- 1 Hot Pepper, finely chopped
-- 10 tsp Oil
-- 1 tsp Turmeric Powder
-- 3-tsp Curry Powder
-- 1/2 tsp Oregano
-- 1/2 tsp Ground Cloves
-- 1/2 tsp Paprika
-- 2-3 Bay Leaves
-- 2-3 Cardamom Seeds
-- 1/2 tsp Paprika
-- 3-4 Peppercorns
-- 1 can Tomato Sauce or Chopped Tomatoes
-- Potatoes (optional), peeled and cut into wedges
-- 1 tsp Garam Masala
-- Chopped Cilantro (for garnish)
-
-**Instructions:**
-
+---
+category: main course
+author: Dad
+ingredients:
+  - 3-4 lbs Chicken (mixture of legs and thighs)
+  - 48 spoons Yogurt
+  - Curry Powder (amount not specified)
+  - Ginger Powder (amount not specified)
+  - Cumin Powder (amount not specified)
+  - 2 Yellow Onions, chopped
+  - Green Peppers, chopped
+  - 2-3 inch Ginger Root, finely chopped
+  - 2-3 Garlic Cloves, minced
+  - 1 Hot Pepper, finely chopped
+  - 10 tsp Oil
+  - 1 tsp Turmeric Powder
+  - 3-tsp Curry Powder
+  - 1/2 tsp Oregano
+  - 1/2 tsp Ground Cloves
+  - 1/2 tsp Paprika
+  - 2-3 Bay Leaves
+  - 2-3 Cardamom Seeds
+  - 1/2 tsp Paprika
+  - 3-4 Peppercorns
+  - 1 can Tomato Sauce or Chopped Tomatoes
+  - Potatoes (optional), peeled and cut into wedges
+  - 1 tsp Garam Masala
+  - Chopped Cilantro (for garnish)
+---
 1. **Marinate Chicken:** Combine chicken, yogurt, curry powder, ginger powder, and cumin powder in a bowl. Refrigerate overnight.
 2. **Chop Vegetables:** Chop onions and green peppers to 1/2-3/4 inch size. Finely chop ginger, garlic, and hot pepper.
 3. **Sauté Aromatics:** Heat oil in a pan over medium heat. Add chopped onions and green peppers, cook until softened.

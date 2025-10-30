@@ -1,16 +1,18 @@
-**Anji's Cider Chicken**
-
+---
+title: Anji's Cider Chicken
+category: main course
+author: Anji
 ingredients:
-- 8-10 boneless, skinless chicken thighs
-- 1 tbsp olive oil
-- 1 tbsp butter
-- 10-12 cloves garlic, smashed
-- 10-12 pepperoncini or jarred cherry peppers, chopped
-- 8 oz sliced mushrooms
-- 2 cups apple cider or chicken broth
-- 2-3 apples, peeled and sliced (optional)
-- Salt and pepper to taste
-- 1 tbsp balsamic vinegar
+  - 8-10 boneless, skinless chicken thighs
+  - 1 tbsp olive oil
+  - 1 tbsp butter
+  - 10-12 cloves garlic, smashed
+  - 10-12 pepperoncini or jarred cherry peppers, chopped
+  - 8 oz sliced mushrooms
+  - 2 cups apple cider or chicken broth
+  - 2-3 apples, peeled and sliced (optional)
+  - Salt and pepper to taste
+  - 1 tbsp balsamic vinegar
 ---
 
 1. Heat oil and butter in a large skillet over medium heat. Add garlic and peppers, sauté for 2 minutes.

@@ -1,15 +1,14 @@
-## Mom's Mantecaditos
-
-**Ingredients:**
-
-- 1/2 cup butter (1/4 lb)
-- 1/2 cup vegetable shortening
-- 1/2 cup sugar
-- 1 teaspoon almond extract
-- 2 1/2 cups flour
-- 5 cherries
-
-**Instructions:**
+---
+category: desserts
+author: Mom
+ingredients:
+  - 1/2 cup butter (1/4 lb)
+  - 1/2 cup vegetable shortening
+  - 1/2 cup sugar
+  - 1 teaspoon almond extract
+  - 2 1/5 cups flour
+  - 5 cherries
+---
 
 1. Preheat oven to 350°F (175°C).
 2. In a large bowl, soften butter and shortening using a spoon.
@@ -21,20 +20,19 @@
 8. Cut cherries in half and place a piece in the center of each cookie.
 9. Bake for 25 minutes or until golden brown.
 
-## Arroz con Coco (Coconut Rice)
-
-**Ingredients:**
-
-- 1 cup rice
-- 1/2 cup coconut milk
-- 1/2 cup sugar
-- 1/2 cup raisins
-- 1/4 teaspoon salt
-- 6 coarsely ground cinnamon sticks
-- Piece of ginger root
-- 1 coconut
-
-**Instructions:**
+---
+category: side dishes
+author: Mom
+ingredients:
+  - 1 cup rice
+  - 1/2 cup coconut milk
+  - 1/2 cup sugar
+  - 1/2 cup raisins
+  - 1/4 teaspoon salt
+  - 6 coarsely ground cinnamon sticks
+  - Piece of ginger root
+  - 1 coconut
+---
 
 1. Soak rice in water for 2 hours to soften.
 2. Extract coconut milk by grinding the coconut pulp in a food processor, adding hot water to reach 6 cups of milk.

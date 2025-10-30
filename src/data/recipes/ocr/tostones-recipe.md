@@ -1,13 +1,13 @@
-**Tostones Recipe**
-
-**Ingredients:**
-
-- 2 green plantains
-- Oil (for frying)
-- Salt
-- Garlic (optional)
-
-**Instructions:**
+---
+title: Tostones Recipe
+category: appetizers
+author: Unknown
+ingredients:
+  - 2 green plantains
+  - Oil (for frying)
+  - Salt
+  - Garlic (optional)
+---
 
 1. Heat oil over medium heat.
 2. Peel plantains and cut into 3/4-inch diagonal slices.

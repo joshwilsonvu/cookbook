@@ -1,19 +1,18 @@
-**Arroz con Salchichas (Hot Dogs and Rice)**
-
-**Ingredients:**
-
-- 2 cups rice
-- 1 teaspoon paprika
-- 2 cans vienna sausages
-- 1 can tomato sauce
-- 2 tablespoons salt
-- ¼ cup olive oil
-- 1 medium onion
-- 1 small bell pepper
-- 2 tablespoons alcaparrado (olive and capers with pimento)
-- 2-3 garlic cloves
-
-**Preparation:**
+---
+category: main course
+author: Unknown
+ingredients:
+  - 2 cups rice
+  - 1 teaspoon paprika
+  - 2 cans vienna sausages
+  - 1 can tomato sauce
+  - 2 tablespoons salt
+  - ¼ cup olive oil
+  - 1 medium onion
+  - 1 small bell pepper
+  - 2 tablespoons alcaparrado (olive and capers with pimento)
+  - 2-3 garlic cloves
+---
 
 1. Heat oil in a heavy pan over medium heat and soften the onions.
 2. Add bell pepper pieces, garlic, oregano, and sausages. Heat through.

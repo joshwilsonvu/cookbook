@@ -1,17 +1,11 @@
-**French Fries Recipe**
-
-**Ingredients:**
-
-- Potatoes (8-6)
-- Salt (2 teaspoons)
-- Olive Oil (1 tablespoon)
-
-**Equipment:**
-
-- Baking Sheet
-- Measuring Cup/Spoon
-
-**Instructions:**
+---
+category: side dishes
+author: Unknown
+ingredients:
+  - Potatoes (8-6)
+  - Salt (2 teaspoons)
+  - Olive Oil (1 tablespoon)
+---
 
 1. Preheat oven to 400°F (200°C).
 2. Wash all potatoes.

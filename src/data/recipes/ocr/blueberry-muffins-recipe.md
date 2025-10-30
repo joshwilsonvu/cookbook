@@ -1,13 +1,13 @@
-**Blueberry Muffins Recipe**
-
-**Ingredients:**
-
-- 1 cup milk
-- 1/4 cup vegetable oil
-- 2 cups all-purpose flour
-- 1 cup blueberries
-
-**Directions:**
+---
+title: Blueberry Muffins Recipe
+category: baking
+author: Unknown
+ingredients:
+  - 1 cup milk
+  - 1/4 cup vegetable oil
+  - 2 cups all-purpose flour
+  - 1 cup blueberries
+---
 
 1. Preheat oven to 400°F (200°C).
 2. Mix ingredients in a mixing bowl.
