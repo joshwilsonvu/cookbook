@@ -1,6 +1,5 @@
 ---
 category: main course
-author: Unknown
 ingredients:
   - 2 cups rice
   - 1 teaspoon paprika

@@ -1,7 +1,5 @@
 ---
-title: Blueberry Muffins Recipe
 category: baking
-author: Unknown
 ingredients:
   - 1 cup milk
   - 1/4 cup vegetable oil

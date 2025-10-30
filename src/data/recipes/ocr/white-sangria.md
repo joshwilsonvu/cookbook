@@ -1,7 +1,7 @@
 ---
 category: drinks
 author: Polly
-title: Polly's White Sangria
+title: White Sangria
 ingredients:
   - 1/3 cup brandy
   - 1/3 cup peach schnapps

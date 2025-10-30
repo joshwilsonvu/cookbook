@@ -1,6 +1,6 @@
 ---
 category: dessert
-author: Alice
+author: Polly
 ingredients:
   - 1 cup all-purpose flour
   - ½ teaspoon baking soda
