@@ -16,5 +16,5 @@ ingredients:
 1. Cube bread the day before. Place in bowl on counter and let dry, stirring occasionally.
 2. Melt the butter and pour over bread cubes. Mix.
 3. Add the onion, sugar, allspice, and raisins. Mix well.
-4. In separate bow, thoroughly beat eggs. Add milk and mix well. Pour over the bread cubes and mix well. It should be moist, but not soggy. Shape into ball.
+4. In separate bowl, thoroughly beat eggs. Add milk and mix well. Pour over the bread cubes and mix well. It should be moist, but not soggy. Shape into ball.
 5. Butter some foil and put the dressing on it. Bake at 375° for an hour, or with the last hour of the turkey.

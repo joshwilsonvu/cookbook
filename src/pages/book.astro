@@ -24,10 +24,11 @@ const recipesByCategory = _.groupBy(
         <>
           <h2 class="h1">{category.data.title || getTitle(category.id)}</h2>
           {recipesByCategory[category.id]?.map((recipe) => (
-            <Recipe id={recipe.id} class="break-before-page" />
+            <Recipe id={recipe.id} />
           )) ?? []}
         </>
       ))
     }
   </div>
 </Layout>
+

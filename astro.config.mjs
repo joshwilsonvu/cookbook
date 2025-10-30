@@ -10,7 +10,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
+  scopedStyleStrategy: "class",
   devToolbar: {
     enabled: false,
   },
