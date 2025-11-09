@@ -1,6 +1,6 @@
 ---
 title: Anji's Mushroom Pasta
-category: pasta
+category: mains
 author: Anji
 ingredients:
   - 12-16 oz baby cremini or portabella mushrooms

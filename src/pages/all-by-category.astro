@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import * as _ from "lodash-es";
+import { getTitle } from "../utils";
+import Layout from "../layouts/Layout.astro";
+
+const recipes = await getCollection("recipes");
+const categories = _.sortBy(
+  await getCollection("categories"),
+  (category) => category.data.order ?? 0,
+);
+
+const recipesByCategory = _.groupBy(
+  recipes,
+  (recipe) => recipe.data.category.id,
+);
+---
+
+<Layout title="All recipes by category">
+  <ol>
+    {
+      categories.map((category) => (
+        <li>
+          <p>{category.id}</p>
+
+          <ol>
+            {recipesByCategory[category.id]?.map((recipe) => (
+              <li>{recipe.id}</li>
+            ))}
+          </ol>
+        </li>
+      ))
+    }
+  </ol>
+</Layout>

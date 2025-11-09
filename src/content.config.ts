@@ -11,7 +11,7 @@ const categories = defineCollection({
   }),
 });
 const recipes = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/data/recipes" }),
+  loader: glob({ pattern: ["**/*.md", "!**/_*"], base: "./src/data/recipes" }),
   schema: z.object({
     // inferred from path by default
     title: z.string().optional(),

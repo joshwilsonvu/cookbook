@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{Astro.props.title}</title>
+  </head>
+  <body class="transparent flex flex-col">
+    <slot />
+  </body>
+</html>
+
+<style>
+  @media screen {
+    .transparent {
+      --bg-square-size: 12px;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          white 25%,
+          transparent 25%,
+          transparent 75%,
+          white 75%,
+          white
+        ),
+        repeating-linear-gradient(
+          45deg,
+          white 25%,
+          lightgray 25%,
+          lightgray 75%,
+          white 75%,
+          white
+        );
+      background-position:
+        0 0,
+        var(--bg-square-size) var(--bg-square-size);
+      background-size: calc(var(--bg-square-size) * 2)
+        calc(var(--bg-square-size) * 2);
+    }
+  }
+</style>

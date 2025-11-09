@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 interface Props {
-	title?: string
+  title?: string;
 }
 ---
 
@@ -15,7 +15,7 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
   </head>
-  <body class="web:px-6 web:py-8 web:lg:p-20 max-w-7xl web:mx-auto">
+  <body class="max-w-7xl web:mx-auto web:px-6 web:py-8 web:lg:p-20">
     <slot />
   </body>
 </html>

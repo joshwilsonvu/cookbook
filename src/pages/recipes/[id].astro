@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const recipes = await getCollection("recipes");
   return recipes.map((recipe) => ({
     // for generating pages
-    params: { id: recipe.id },
+    params: { id: recipe.id.replace("ocr/", "") },
     // passed to each page
     props: { title: recipe.data.title || getTitle(recipe.id) },
   }));

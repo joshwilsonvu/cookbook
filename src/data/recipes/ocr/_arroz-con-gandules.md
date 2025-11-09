@@ -16,6 +16,7 @@ ingredients:
   - 1 green pepper
   - 1 fresh tomato
 ---
+
 1. Heat oil in a medium heavy pan over medium heat. Cook marinated pork (if using) until golden brown.
 2. Add onion and cook until softened.
 3. Add green pepper, mashed garlic, cilantro, and fresh tomato.

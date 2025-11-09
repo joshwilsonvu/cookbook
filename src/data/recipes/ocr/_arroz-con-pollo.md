@@ -17,6 +17,7 @@ ingredients:
   - 1 teaspoon paprika
   - 1 teaspoon garlic salt
 ---
+
 1. Marinate chicken with garlic salt and yogurt (optional).
 2. Brown chicken in olive oil in a heavy pan over medium heat for 5 minutes per side.
 3. Remove chicken and set aside. Leave drippings in the pan.

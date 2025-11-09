@@ -15,6 +15,7 @@ ingredients:
   - 3 tablespoons freshly grated Pecorino Romano cheese
   - 1 teaspoon grated lemon rind
 ---
+
 1. Bring broth and 1/2 cup water to a simmer in a saucepan. Keep warm over low heat.
 2. Heat olive oil in a large saucepan over medium-high heat. Add onion and sugar; sauté 7 minutes or until golden. Set aside.
 3. Add sausage to pan; sauté 4 minutes or until browned, crumbling as you go. Add shallots; sauté 2 minutes. Add rice; sauté 30 seconds.

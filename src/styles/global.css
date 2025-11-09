@@ -1,41 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Caveat+Brush&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* --font-display: "ShadowsIntoLightTwo"; */
+  --font-display: "ShadowsIntoLightTwo";
   --font-display: "Beth Ellen";
-  /* --font-display: Kalam; */
-  /* --font-sans: Poppins; */
+  /*--font-display: Kalam; */
+  --font-display: "Caveat Brush";
+  --font-sans: Poppins;
   --font-sans: Lato;
+  --color-tx-2: #282726; /* flexoki base 900 */
+  --color-tx-3: #403e3c; /* flexoki base 800 */
 }
 @theme inline {
   --color-tx: var(--dyn-color-tx);
   --color-bg: var(--dyn-color-bg);
 }
-:root {
-  --dyn-color-tx: black;
-  --dyn-color-bg: white;
-}
-@media screen {
-  :root {
-    --dyn-color-bg: #fffcf0;
-    --dyn-color-tx: #100f0f;
-  }
-}
-/* Comment/uncomment to enable/disable dark colors */
-/* @media screen and (prefers-color-scheme: dark) {
-  :root {
-    --dyn-color-bg: #100f0f;
-    --dyn-color-tx: #fffcf0;
-  }
-} */
 
 @utility h1 {
-  @apply text-5xl leading-relaxed;
+  @apply mb-4 text-5xl leading-relaxed;
 }
 
 @utility h2 {
-  @apply text-3xl leading-loose;
+  @apply mb-2 text-3xl leading-loose;
 }
 @custom-variant web {
   @media screen {
@@ -43,43 +29,71 @@
   }
 }
 
-@media screen {
+@utility paper-shadow {
+  --shadow-color: 0deg 0% 46%;
+  /*--shadow-elevation-low:
+    0.2px 0.6px 0.5px hsl(var(--shadow-color) / 0.74),
+    0.3px 0.9px 0.8px -2.2px hsl(var(--shadow-color) / 0.52),
+    1px 2.6px 2.3px -4.5px hsl(var(--shadow-color) / 0.3);*/
+  box-shadow:
+    0.2px 0.6px 0.5px hsl(var(--shadow-color) / 0.62),
+    0.4px 1px 0.9px -1.1px hsl(var(--shadow-color) / 0.51),
+    0.9px 2.4px 2.1px -2.2px hsl(var(--shadow-color) / 0.4),
+    2.2px 6.1px 5.3px -3.4px hsl(var(--shadow-color) / 0.29),
+    4.8px 13.2px 11.6px -4.5px hsl(var(--shadow-color) / 0.18);
+}
+
+@layer base {
   :root {
-    color-scheme: light dark;
-    @apply text-tx bg-bg;
+    --dyn-color-tx: black;
+    --dyn-color-bg: white;
+  }
+  @media screen {
+    :root {
+      /*--dyn-color-bg: #fffcf0;*/
+      --dyn-color-tx: #100f0f;
+    }
+  }
+
+  @media screen {
+    :root {
+      @apply bg-bg text-tx;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-balance text-tx;
+  }
+
+  p,
+  li {
+    @apply mb-2 leading-normal text-pretty text-tx-2;
+  }
+
+  ol {
+    @apply list-decimal pl-4;
+  }
+
+  :root {
+    counter-reset: pageNumber;
   }
 }
-@media print {
-  :root {
-    /* like browser zoom, makes everything smaller and affects layout */
-    zoom: 75%;
-  }
-}
-h1,
-h2,
-h3,
-h4 {
-  @apply font-display text-balance;
-}
 
-p,
-li {
-  @apply text-pretty leading-normal mb-2;
-}
-
-ol {
-  @apply list-decimal pl-4;
-}
-
-:root {
-  counter-reset: pageNumber;
-}
 @page {
-  /* size: 5.5in 8.5in; */
-  margin: 0.75in;
+  size: 7.5in 9.25in;
+  margin: 0.5in;
 
   @bottom-center {
     counter-increment: pageNumber;
     content: "Page " counter(pageNumber);
   }
+}
+@page :left {
+  margin-right: 0.75in;
+}
+@page :right {
+  margin-left: 0.75in;
 }

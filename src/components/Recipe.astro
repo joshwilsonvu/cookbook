@@ -10,7 +10,8 @@ interface Props {
 }
 
 const { id } = Astro.props;
-const recipe = await getEntry("recipes", id);
+const recipe =
+  (await getEntry("recipes", id)) || (await getEntry("recipes", `ocr/${id}`));
 if (!recipe) {
   throw new Error("no recipe");
 }
@@ -21,15 +22,15 @@ const { Content } = await render(recipe);
 
 <article class={clsx("break-inside-avoid", Astro.props.class)}>
   <div class="mb-8">
-    <h2 class="capitalize h1 mb-0">{title || getTitle(id)}</h2>
-    <p class="italic flex items-center gap-[1ch]">
+    <h2 class="h1 mb-0 capitalize">{title || getTitle(id)}</h2>
+    <p class="flex items-center gap-[1ch] italic">
       <Icon name="lucide:heart" class="text-lg" />
       From {author}&apos;s kitchen
     </p>
   </div>
-  <div class="flex flex-col md:flex-row items-stretch gap-8">
-    <div class="basis-0 grow-1 max-w-max">
-      <h3 class="h2">Ingredients</h3>
+  <div class="flex flex-col items-stretch gap-8 md:flex-row md:pl-8">
+    <div class="max-w-max grow-1 basis-0">
+      <h3 class="h2">ingredients</h3>
       {
         Array.isArray(ingredients) ? (
           <ul>
@@ -44,7 +45,7 @@ const { Content } = await render(recipe);
         ) : (
           Object.entries(ingredients).map(([section, sectionIngredients]) => (
             <div>
-              <p class="capitalize">{section}</p>
+              <p class="mt-4 font-bold capitalize">{section}</p>
               <ul>
                 {sectionIngredients.map((ingredient) => (
                   <li>{ingredient}</li>
@@ -56,9 +57,9 @@ const { Content } = await render(recipe);
       }
       {notes && <p>{notes}</p>}
     </div>
-    <div class="hidden md:block bg-tx opacity-50 basis-0.5"></div>
-    <div class="basis-0 grow-2">
-      <h3 class="h2">Directions</h3>
+    <div class="hidden basis-0.25 bg-tx md:block"></div>
+    <div class="grow-2 basis-0">
+      <h3 class="h2">directions</h3>
       <Content />
     </div>
   </div>

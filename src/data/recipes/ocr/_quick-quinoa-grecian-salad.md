@@ -1,8 +1,8 @@
 ```markdown
 ---
-title: Shillee's Quick Quinoa Grecian Salad
-category: salads
-author: Shillee
+title: Quick Quinoa Grecian Salad
+category: soups-and-salads
+author: Shilee
 ingredients:
   - 2 cups uncooked quinoa
   - 3 cups fat-free, less-sodium chicken broth

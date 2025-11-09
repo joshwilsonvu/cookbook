@@ -21,19 +21,23 @@ ingredients:
 7. Drop by rounded tablespoons onto ungreased baking sheets.
 8. Bake for 9-11 minutes, or until golden brown.
 9. Let cool on baking sheets for a few minutes before transferring to a wire rack to cool completely.
+
 ---
+
 category: dinner
 author: Bob
 ingredients:
-  - 1 pound ground beef
-  - 1 onion, chopped
-  - 2 cloves garlic, minced
-  - 1 (15 ounce) can tomato sauce
-  - 1 (15 ounce) can diced tomatoes, undrained
-  - 1 teaspoon dried oregano
-  - ½ teaspoon salt
-  - ¼ teaspoon black pepper
-  - 1 pound spaghetti
+
+- 1 pound ground beef
+- 1 onion, chopped
+- 2 cloves garlic, minced
+- 1 (15 ounce) can tomato sauce
+- 1 (15 ounce) can diced tomatoes, undrained
+- 1 teaspoon dried oregano
+- ½ teaspoon salt
+- ¼ teaspoon black pepper
+- 1 pound spaghetti
+
 ---
 
 1. Brown ground beef in a large skillet over medium heat, drain off any excess grease.

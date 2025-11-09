@@ -21,17 +21,20 @@ ingredients:
 9. Bake for 25 minutes or until golden brown.
 
 ---
+
 category: side dishes
 author: Mom
 ingredients:
-  - 1 cup rice
-  - 1/2 cup coconut milk
-  - 1/2 cup sugar
-  - 1/2 cup raisins
-  - 1/4 teaspoon salt
-  - 6 coarsely ground cinnamon sticks
-  - Piece of ginger root
-  - 1 coconut
+
+- 1 cup rice
+- 1/2 cup coconut milk
+- 1/2 cup sugar
+- 1/2 cup raisins
+- 1/4 teaspoon salt
+- 6 coarsely ground cinnamon sticks
+- Piece of ginger root
+- 1 coconut
+
 ---
 
 1. Soak rice in water for 2 hours to soften.

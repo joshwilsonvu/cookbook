@@ -1,9 +1,9 @@
 ---
-category: main course
-author: Unknown
+category: mains
+author: Polly
 ingredients:
   - 1 tablespoon peanut oil
-  - 1 cup chopped onion (about 4 cloves)
+  - 1 cup chopped onion (about 1 medium)
   - 1 ½ tablespoons minced garlic (about 4 cloves)
   - 2 ½ pounds skinless, boneless chicken breast halves, cut into bite-sized pieces
   - ⅓ cup chunky peanut butter
@@ -17,6 +17,7 @@ ingredients:
   - 8 cups hot cooked brown rice
   - ¾ cup 2% Greek-style yogurt (such as Fage)
 ---
+
 1. Heat oil in a Dutch oven over medium heat. Add onion and garlic; cook 5 minutes or until tender, stirring frequently.
 2. Add chicken to pan; cook 4 minutes or until cooked through, stirring frequently.
 3. Stir in peanut butter and next 5 ingredients (through tomato paste); cook 1 minute.

@@ -14,6 +14,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-
+  output: "static",
+  site: "https://cookbook.joshwilsonvu.com",
   integrations: [icon()],
 });

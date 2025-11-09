@@ -1,3 +1,19 @@
-<div class="">
-  <slot />
-</div>
+---
+import clsx from "clsx";
+
+interface Props {
+  class?: string;
+  containerClass?: string;
+}
+---
+
+<article
+  class={clsx(
+    "w-[7.5in] h-[9.25in] web:my-6 web:mx-auto web:p-[0.5in] overflow-hidden web:overflow-visible break-inside-avoid bg-white web:paper-shadow web:border web:border-gray-200",
+    Astro.props.containerClass,
+  )}
+>
+  <div class={clsx("[zoom:75%]", Astro.props.class)}>
+    <slot />
+  </div>
+</article>

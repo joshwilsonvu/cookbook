@@ -1,34 +1,82 @@
 ---
-import * as _ from "lodash-es";
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import { getTitle } from "../utils";
+import * as _ from "lodash-es";
+import PrintLayout from "../layouts/PrintLayout.astro";
+import PrintPage from "../components/PrintPage.astro";
 import Recipe from "../components/Recipe.astro";
 
-const categories = _.sortBy(
-  await getCollection("categories"),
-  (category) => category.data.order ?? 0
-);
-const recipes = await getCollection("recipes");
+// const categories = _.sortBy(
+//   await getCollection("categories"),
+//   (category) => category.data.order ?? 0
+// );
 
-const recipesByCategory = _.groupBy(
-  recipes,
-  (recipe) => recipe.data.category.id
-);
+// const recipesByCategory = _.groupBy(
+//   recipes,
+//   (recipe) => recipe.data.category.id
+// );
 ---
 
-<Layout title="Our kitchen table">
-  <div class="flex flex-col gap-32">
-    {
-      categories.map((category) => (
-        <>
-          <h2 class="h1">{category.data.title || getTitle(category.id)}</h2>
-          {recipesByCategory[category.id]?.map((recipe) => (
-            <Recipe id={recipe.id} />
-          )) ?? []}
-        </>
-      ))
-    }
-  </div>
-</Layout>
-
+<PrintLayout title="Our kitchen table">
+  <PrintPage class="grid h-full place-content-center">
+    <h1 class="h1 text-center text-8xl">Our Kitchen Table</h1>
+  </PrintPage>
+  <PrintPage class="grid h-full place-content-center">
+    <h2 class="h1 text-7xl">Drinks</h2>
+  </PrintPage>
+  <PrintPage class="flex h-full flex-col gap-16">
+    <Recipe id="the-arlo" />
+    <Recipe id="the-consuelo" />
+  </PrintPage>
+  <PrintPage class="flex h-full flex-col gap-16">
+    <Recipe id="espresso-martini" />
+    <Recipe id="apple-cider-whiskey-sour" />
+  </PrintPage>
+  <PrintPage class="grid h-full place-content-center">
+    <h2 class="h1 text-7xl">Starters & Sides</h2>
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="hot-dorito-dip" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="mimis-raisin-dressing" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="regular-white-bread" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/roasted-red-pepper-dip" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/spinach-artichoke-dip" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/seven-layer-dip" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/tostones" />
+  </PrintPage>
+  <PrintPage class="grid h-full place-content-center">
+    <h2 class="h1 text-7xl">Mains</h2>
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="cajun-tantrum-pasta" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/mushroom-pasta" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/spicy-peanut-chicken-over-rice" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/italian-beef" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/coca-cola-chicken" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/chicken-curry" />
+  </PrintPage>
+  <PrintPage>
+    <Recipe id="ocr/cider-chicken" />
+  </PrintPage>
+</PrintLayout>
