@@ -17,9 +17,23 @@ import Recipe from "../components/Recipe.astro";
 ---
 
 <PrintLayout title="Our kitchen table">
-  <PrintPage class="grid h-full place-content-center">
+  <PrintPage class="grid place-content-center">
     <h1 class="h1 text-center text-8xl">Our Kitchen Table</h1>
   </PrintPage>
+  {
+    import.meta.env.DEV && (
+      <>
+        <PrintPage class="grid place-content-center bg-amber-200">
+          <h2 class="h2 text-center">Test: full size background</h2>
+        </PrintPage>
+        <PrintPage>
+          <div class="mb-4 grid h-[1in] w-[6.25in] place-content-center rounded-xl border border-dashed border-amber-800 bg-amber-300">
+            Test: 6.25 in is full content width
+          </div>
+        </PrintPage>
+      </>
+    )
+  }
   <PrintPage class="grid h-full place-content-center">
     <h2 class="h1 text-7xl">Drinks</h2>
   </PrintPage>

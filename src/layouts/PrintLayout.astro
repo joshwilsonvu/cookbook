@@ -10,7 +10,7 @@ interface Props {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <!-- <meta name="viewport" content="width=device-width" /> -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
@@ -21,6 +21,7 @@ interface Props {
 </html>
 
 <style>
+  /* simulate Word/Pages/Docs layout with transparency checkered background */
   @media screen {
     .transparent {
       --bg-square-size: 12px;
@@ -47,5 +48,9 @@ interface Props {
       background-size: calc(var(--bg-square-size) * 2)
         calc(var(--bg-square-size) * 2);
     }
+  }
+  :root {
+    /** Express font-size in terms of inches for web-print consistency, evaluates to 12px on web */
+    font-size: calc(1in / 96 * 12);
   }
 </style>

@@ -1,5 +1,5 @@
 ---
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   class?: string;
@@ -8,12 +8,24 @@ interface Props {
 ---
 
 <article
-  class={clsx(
-    "w-[7.5in] h-[9.25in] web:my-6 web:mx-auto web:p-[0.5in] overflow-hidden web:overflow-visible break-inside-avoid bg-white web:paper-shadow web:border web:border-gray-200",
-    Astro.props.containerClass,
+  class={twMerge(
+    "PrintPage web:w-[7.5in] web:h-[9.25in] web:my-[0.25in] web:mx-auto web:p-[0.5in] print:h-[8.25in] print:flex print:flex-col overflow-hidden web:overflow-visible break-before-page bg-white web:paper-shadow",
+    Astro.props.class,
   )}
 >
-  <div class={clsx("[zoom:75%]", Astro.props.class)}>
-    <slot />
-  </div>
+  <slot />
 </article>
+<style>
+  @reference "../styles/global.css";
+  /* simulate alternating page margins and add an indicator for the book's spine */
+  @media screen {
+    .PrintPage:nth-of-type(2n + 1) {
+      @apply pl-[0.75in];
+      box-shadow: -8px 0 2px var(--color-gray-400);
+    }
+    .PrintPage:nth-of-type(2n) {
+      @apply pr-[0.75in];
+      box-shadow: 8px 0 2px var(--color-gray-400);
+    }
+  }
+</style>

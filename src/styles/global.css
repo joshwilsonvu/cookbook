@@ -83,6 +83,7 @@
 }
 
 @page {
+  /* content width is 6.25in */
   size: 7.5in 9.25in;
   margin: 0.5in;
 

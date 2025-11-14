@@ -19,7 +19,7 @@ ingredients:
   Drizzle:
     - 8 oz sour cream or crema
     - ½ jalapeño, diced
-    - 1 small can chipolte peppers in adobo sauce
+    - 1 small can chipotle peppers in adobo sauce
     - 2 limes
 ---
 
