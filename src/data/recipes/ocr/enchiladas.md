@@ -1,6 +1,5 @@
-```markdown
 ---
-title: Shilee's Enchiladas
+title: Famous Enchiladas
 category: main course
 author: Shilee
 ingredients:
@@ -19,5 +18,4 @@ ingredients:
 7. Divide shredded chicken among the tortillas, placing meat down the center of each tortilla.
 8. Fold filled tortillas and place seam-side down in the dish.
 9. Pour remaining sauce over enchiladas and sprinkle with cheese.
-10. Bake for 20 minutes at 350°F (175°C).
-```
+10. Bake for 20 minutes at 350°F.
