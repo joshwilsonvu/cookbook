@@ -1,5 +1,5 @@
 ---
-category: side dishes
+category: sides
 author: Unknown
 ingredients:
   - Potatoes (8-6)

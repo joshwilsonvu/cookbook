@@ -33,7 +33,7 @@ def process_heic_files(directory = '.')
     end
 
     # 3. LMS Chat Prompt and Write to TXT file
-    lms_chat_command = "lms chat --prompt \"The following text is a recipe extracted from an image. There are formatting issues. Please clean up the recipe to match the most likely intent. Recipe:\n\n#{recipe_contents}\""
+    lms_chat_command = "lms chat --prompt \"The following text is a recipe extracted from an image. There are formatting issues. Please clean up the recipe to match the most likely intent. If the wording is already syntactically correct, do not change it. Recipe:\n\n#{recipe_contents}\""
     puts "Running: #{lms_chat_command}"
 
     # Capture the output of lms chat

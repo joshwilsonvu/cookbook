@@ -1,4 +1,5 @@
 ---
+title: Arroz con Salchichas
 author: Evangeline
 category: mains
 ingredients:

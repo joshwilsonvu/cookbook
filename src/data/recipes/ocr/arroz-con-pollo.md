@@ -28,4 +28,4 @@ notes: It's best to use a combination of white and dark meat.
 5. Add mashed garlic, cilantro, olives, capers, and paprika.
 6. Return chicken to the pan. Add rice, tomato (or diced tomatoes/puree), and water (enough to reach 4 cups).
 7. Add salt and pepper. Bring to a boil, then reduce heat to medium-low and simmer until water is absorbed (about 15–20 minutes).
-8. Reduce heat further, turn the rice from bottom to top, and continue to cook for about 30 minutes. Turn the rice one more time and serve.
+8. Reduce heat further, turn the rice from bottom to top, and continue to cook until done, about 25 minutes total. Turn the rice one more time and serve.

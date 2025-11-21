@@ -30,7 +30,7 @@ ingredients:
 ---
 
 1. The night before, mix the chicken and marinade ingredients in a large bowl. Cover and let the chicken marinate in the refrigerator overnight.
-2. Chop the yellow onions and green bell pepper together roughly (1/2 inch pieces), ideally by adding both to a food processor. Set aside.
+2. Chop the yellow onions and green bell pepper together roughly (1/2 inch pieces), with a food processor if available. Set aside.
 3. Finely chop the ginger, garlic, and hot pepper (1/4 inch pieces) in a food processor. Add to the chopped onions and bell pepper.
 4. Heat about 3 tbsp of oil in a thick, wide saucepan or dutch oven on medium heat. Add chopped vegetables and cook until soft.
 5. Add spices: turmeric, curry powder, oregano, cloves, paprika, bay leaves, cardamom, and black pepper. (If using cardamom pods, crack them open and add only the seeds inside.) Cook spices for 2-3 minutes.

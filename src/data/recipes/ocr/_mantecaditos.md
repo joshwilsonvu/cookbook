@@ -22,7 +22,7 @@ ingredients:
 
 ---
 
-category: side dishes
+category: sides
 author: Mom
 ingredients:
 
