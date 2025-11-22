@@ -1,6 +1,6 @@
 ---
 category: drinks
-author: Sam
+author: Kathy
 title: Coquito (Puerto Rican Eggnog)
 ingredients:
   - 2 15-ounce cans cream of coconut (Coco Lopez)
