@@ -3,10 +3,10 @@
 
 @theme {
   --font-display: "ShadowsIntoLightTwo";
-  --font-display: "Beth Ellen";
+  /*--font-display: "Beth Ellen"; */
   /*--font-display: Kalam; */
-  --font-display: "Caveat Brush";
-  --font-sans: Poppins;
+  /*--font-display: "Caveat Brush"; */
+  /*--font-sans: Poppins; */
   --font-sans: Lato;
   --color-tx-2: #282726; /* flexoki base 900 */
   --color-tx-3: #403e3c; /* flexoki base 800 */
