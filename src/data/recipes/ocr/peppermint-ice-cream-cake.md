@@ -25,7 +25,7 @@ notes: |
   Freeze time: 6-7 hours
 ---
 
-1. Preheat oven to 350°F (175°C). Coat two 8-inch round cake pans with cooking spray. Line the bottoms of each pan with wax paper.
+1. Preheat oven to 350°F. Coat two 8-inch round cake pans with cooking spray. Line the bottoms of each pan with wax paper.
 2. Combine cocoa powder, boiling water, and melted butter in a bowl; whisk until blended. Cool and set aside.
 3. In a large bowl, combine sugars, stirring well until blended. Add egg substitute and beat for 2 minutes or until light and creamy. Add cocoa mixture and continue beating for 1 minute.
 4. Lightly spoon flour into dry measuring cups; level with a knife. Combine flour, baking powder, baking soda, and salt in a separate bowl.

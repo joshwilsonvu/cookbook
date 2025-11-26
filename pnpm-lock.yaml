@@ -36,6 +36,9 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
+      mdast-util-find-and-replace:
+        specifier: ^3.0.2
+        version: 3.0.2
       prettier:
         specifier: ^3.6.2
         version: 3.6.2

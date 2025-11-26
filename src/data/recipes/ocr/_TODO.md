@@ -1,5 +1,5 @@
 [ ] Decide whether to keep enchiladas.md or replace with my recipe :thinking:
-[ ] Formatting: find and replace ascii quotes to smart quotes, hyphens to en dashes between numbers, fractions to unicode, "degrees" to degree symbol, remove celsius
+[x] Formatting: find and replace ascii quotes to smart quotes, hyphens to en dashes between numbers, fractions to unicode, "degrees" to degree symbol, remove celsius
 
 - https://www.aspicyperspective.com/thanksgiving-dessert-pumpkin-ice-cream-cake/
 - https://feelgoodfoodie.net/recipe/buffalo-cauliflower-bites/

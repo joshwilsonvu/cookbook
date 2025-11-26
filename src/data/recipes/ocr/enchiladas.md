@@ -9,7 +9,7 @@ ingredients:
   - 1/2 cup shredded cheddar cheese
 ---
 
-1. Preheat oven to 350°F (175°C).
+1. Preheat oven to 350°F.
 2. Boil chicken for 20 minutes.
 3. Shred the cooked chicken into small pieces.
 4. Warm enchilada sauce.

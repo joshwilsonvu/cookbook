@@ -12,6 +12,6 @@ ingredients:
   - 1/4 teaspoon minced garlic
 ---
 
-1. Preheat oven to 375°F (190°C).
+1. Preheat oven to 375°F.
 2. In a small baking dish, mix together all ingredients. Cover dish.
 3. Bake until heated through and bubbly, about 25 minutes.
