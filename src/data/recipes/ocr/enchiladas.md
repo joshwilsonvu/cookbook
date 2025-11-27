@@ -4,7 +4,7 @@ category: main course
 author: Shilee
 ingredients:
   - 1 lb skinless boneless chicken breast
-  - 2 cans enchilada sauce (Old El Paso, hot optional)
+  - 2 cans enchilada sauce (Old El Paso, hot, optional)
   - 8 corn tortillas
   - 1/2 cup shredded cheddar cheese
 ---

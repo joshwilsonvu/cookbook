@@ -24,7 +24,7 @@ ingredients:
     - Seeds from 2–3 whole green cardamom pods, or substitute 3/4 tsp ground cardamom
     - 1/2 tsp black pepper
     - 1 can tomato sauce or chopped tomatoes
-    - A few pounds potatoes, peeled, washed, and cut into 1 1/4 inch wedges, optional
+    - A few pounds potatoes, peeled, washed, and cut into 1 1/4 inch wedges (optional)
     - 1 tsp garam masala
     - Chopped cilantro, for garnish
 ---

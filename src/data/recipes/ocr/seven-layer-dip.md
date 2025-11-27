@@ -12,7 +12,7 @@ ingredients:
   - 3/4 cup diced tomato
   - 2 cups shredded Mexican cheese
   - 1/2 cup sliced black olives (optional)
-notes: "Optional toppings: jalapeños, green onions"
+notes: Try topping with jalapeños or green onions.
 ---
 
 1. Combine refried beans, green chiles, and taco seasoning in a bowl. Spread in a 11x7 inch dish.
