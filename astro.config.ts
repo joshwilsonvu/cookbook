@@ -19,7 +19,6 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       () => (tree: any) => {
-        console.log("Got tree:", tree);
         findAndReplace(tree, formatters);
         return tree;
       },

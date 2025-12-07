@@ -6,7 +6,7 @@ ingredients:
   - 1/2 cup vegetable shortening (or additional butter)
   - 1/2 cup sugar
   - 1 teaspoon almond extract
-  - 2 1/5 cups flour
+  - 2 1/4 cups flour
   - Cherries (halved), jam, or chocolate chunks
 ---
 

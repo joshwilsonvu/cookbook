@@ -29,7 +29,6 @@ ingredients:
     - 1 packet chopped spinach
     - 1 tsp Garam Masala
     - Chopped cilantro (for garnish)
-notes: None
 ---
 
 1. The night before, mix the pork and marinade ingredients in a large bowl. Cover and let the pork marinate in the refrigerator overnight.

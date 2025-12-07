@@ -1,8 +1,20 @@
 ---
-import Recipe from "../components/Recipe.astro";
+import { getCollection } from "astro:content";
+import * as _ from "lodash-es";
 import Layout from "../layouts/Layout.astro";
+import Recipe from "../components/Recipe.astro";
+import { getTitle } from "../utils";
+
+let recipes = await getCollection("recipes");
+recipes = _.sortBy(
+  recipes,
+  (recipe) => recipe.data.category.id ?? "Other",
+  (recipe) => getTitle(recipe.id),
+);
 ---
 
-<Layout>
-  <Recipe id="the-arlo" />
+<Layout title="Our kitchen table">
+  <div class="flex flex-col gap-20">
+    {recipes.map((recipe) => <Recipe id={recipe.id} />)}
+  </div>
 </Layout>

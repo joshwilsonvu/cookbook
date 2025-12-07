@@ -33,8 +33,9 @@ export const formatters: Array<
   [/\b1\/4\b/g, () => "¼"],
   [/\b2\/3\b/g, () => "⅔"],
   [/\b3\/4\b/g, () => "¾"],
+  [/\b1\/8\b/g, () => "⅛"],
   // degree symbol
-  [/\b(?:degrees|°) ([FC])\b/, (match, unit) => `°${unit}`],
+  [/\b(?:degrees|°) ?F?\b/g, () => "°"],
 ];
 
 export function format(s: string) {

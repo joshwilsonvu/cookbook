@@ -3,7 +3,7 @@ require 'find'
 
 def process_heic_files(directory = '.')
   # Find all HEIC files in the specified directory (defaults to current directory)
-  heic_files = Find.find(directory).select { |path| path.end_with?('.HEIC') }
+  heic_files = Find.find(directory).select { |path| path.downcase.end_with?('.heic') }
 
   if heic_files.empty?
     puts "No HEIC files found in #{directory}"
