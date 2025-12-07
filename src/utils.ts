@@ -1,4 +1,5 @@
 import { basename } from "node:path/posix";
+import type { ReplaceFunction } from "hast-util-find-and-replace";
 
 export function getTitle(id: string) {
   const file = basename(id);
@@ -18,18 +19,23 @@ export function capitalize(s: string) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
-export const formatters = [
+/** Replacers must be functions to work with both String.prototype.replace and hast-util-find-and-replace. */
+export const formatters: Array<
+  [RegExp, Parameters<typeof String.prototype.replace>[1] & ReplaceFunction]
+> = [
   // use en dash for ranges
-  [/(\d)-(\d)/g, "$1–$2"],
+  [/(\d+)-(\d+)/g, (match, n1, n2) => `${n1}–${n2}`],
+  // use times symbol instead of "x" for dimensions
+  [/(\d+)x(\d+)/g, (match, n1, n2) => `${n1}×${n2}`],
   // good fractions
-  [/\b1\/2\b/g, "½"],
-  [/\b1\/3\b/g, "⅓"],
-  [/\b1\/4\b/g, "¼"],
-  [/\b2\/3\b/g, "⅔"],
-  [/\b3\/4\b/g, "¾"],
+  [/\b1\/2\b/g, () => "½"],
+  [/\b1\/3\b/g, () => "⅓"],
+  [/\b1\/4\b/g, () => "¼"],
+  [/\b2\/3\b/g, () => "⅔"],
+  [/\b3\/4\b/g, () => "¾"],
   // degree symbol
-  [/\bdegrees ([FC])\b/, "°$1"],
-] as const;
+  [/\b(?:degrees|°) ([FC])\b/, (match, unit) => `°${unit}`],
+];
 
 export function format(s: string) {
   return formatters.reduce(
