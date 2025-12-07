@@ -5,7 +5,7 @@ def format_md_files(directory = '.')
   md_files = Find.find(directory).select { |path| path.end_with?('.md') }
 
   if md_files.empty?
-    puts "No HEIC files found in #{directory}"
+    puts "No MD files found in #{directory}"
     return
   end
 
@@ -53,9 +53,10 @@ The body of the markdown file should just be the instructions to make the recipe
 
 Output ONLY the reformatted file. Do not output a markdown fence. If the given recipe appears to be two separate recipes, treat them as independent recipes and output two markdown files back to back, i.e. frontmatter, body, frontmatter, body, and don't try to combine them. Apply minimal editorialization—keep it word-for-word as much as possible.
 
-Recipe:
-
-#{recipe_contents}\""
+<recipe>
+#{recipe_contents}
+</recipe>
+\""
 
     puts "Running: #{lms_chat_command}"
     output = `#{lms_chat_command}`
