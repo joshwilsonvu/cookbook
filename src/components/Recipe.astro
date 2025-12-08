@@ -10,8 +10,7 @@ interface Props {
 }
 
 const { id } = Astro.props;
-const recipe =
-  (await getEntry("recipes", id)) || (await getEntry("recipes", `ocr/${id}`));
+const recipe = await getEntry("recipes", id);
 if (!recipe) {
   throw new Error("no recipe");
 }
