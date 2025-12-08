@@ -1,5 +1,6 @@
 import { basename } from "node:path/posix";
 import type { ReplaceFunction } from "hast-util-find-and-replace";
+import { decodeHTML } from "entities";
 
 export function getTitle(id: string) {
   const file = basename(id);
@@ -36,11 +37,16 @@ export const formatters: Array<
   [/\b1\/8\b/g, () => "⅛"],
   // degree symbol
   [/\b(?:degrees|°) ?F?\b/g, () => "°"],
+  // short units
+  [/teaspoons?/g, () => "tsp"],
+  [/tablespoons?/g, () => "tbsp"],
 ];
 
 export function format(s: string) {
-  return formatters.reduce(
-    (ss, [regex, replacement]) => ss.replace(regex, replacement),
-    s,
+  return decodeHTML(
+    formatters.reduce(
+      (ss, [regex, replacement]) => ss.replace(regex, replacement),
+      s,
+    ),
   );
 }
