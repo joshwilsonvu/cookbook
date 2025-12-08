@@ -1,7 +1,7 @@
 ---
 title: Korean Beef Bowl Recipe
 category: mains
-author: Chew Out Loud
+author: Anji
 ingredients:
   - 1/4 cup Tamari (GF, reduced sodium soy sauce)
   - 2 tbsp pure honey
@@ -17,6 +17,7 @@ ingredients:
   - More red pepper flakes (optional, for garnish)
   - Cooked Jasmine rice or other favorite grain for serving
 notes: Gluten- and dairy-free.
+source: https://www.chewoutloud.com/korean-beef-bowl-recipe-gluten-free-dairy-free/
 ---
 
 1. In a bowl, combine all sauce ingredients and stir to combine well. Set aside.

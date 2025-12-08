@@ -1,6 +1,6 @@
 ---
 category: appetizers
-author: Unknown
+author: Polly
 ingredients:
   - 1 large head cauliflower cut into florets
   - ½ cup all-purpose flour
@@ -15,6 +15,7 @@ ingredients:
   - ½ tablespoon lemon juice
   - Ranch or blue cheese dressing for serving
   - Carrots and celery sticks for serving
+source: https://feelgoodfoodie.net/recipe/buffalo-cauliflower-bites/
 ---
 
 1. Preheat oven to 450°F. Grease a baking sheet with cooking spray or line it with parchment paper.

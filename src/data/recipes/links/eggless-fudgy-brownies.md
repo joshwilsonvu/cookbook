@@ -1,7 +1,7 @@
 ---
 title: Eggless Fudgy Brownies
 category: desserts
-author: taffeybakery.com
+author: Anji
 ingredients:
   - 1/2 cup milk
   - 1 tsp white vinegar
@@ -14,7 +14,7 @@ ingredients:
   - 1/2 tsp baking powder
   - 1/4 tsp salt
   - 1/2 cup semi-sweet chocolate chips
-notes: null
+source: https://taffeybakery.com/eggless-fudgy-brownies/#recipe
 ---
 
 1. Grease an 8x8 pan. For easy removal of the brownies, place parchment paper on the bottom and 2 sides of the pan. Grease again and then set aside.

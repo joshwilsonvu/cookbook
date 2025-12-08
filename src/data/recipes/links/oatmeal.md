@@ -1,7 +1,7 @@
 ---
 title: Slow cooker maple brown sugar oatmeal
 category: breakfast
-author: amindfullmom.com
+author: Anji
 ingredients:
   - 1 teaspoon melted coconut oil, butter, or cooking spray (for greasing crockpot)
   - 2 cups regular steel-cut oats (no substitution)
@@ -13,6 +13,7 @@ ingredients:
   - 1/4 teaspoon kosher salt
   - 1/4 cup brown sugar
   - chopped nuts (for serving)
+source: https://amindfullmom.com/slow-cooker-maple-cinnamon-oatmeal/#recipe
 ---
 
 1. Grease the bottom and sides of the slow cooker insert using coconut oil, cooking spray, or butter.

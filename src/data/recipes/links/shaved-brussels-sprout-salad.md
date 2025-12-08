@@ -1,6 +1,6 @@
 ---
 category: salad
-author: Crowded Kitchen
+author: Anji
 ingredients:
   - 12 ounces shaved brussels sprouts, stems removed
   - 1 1/2 cups pomegranate arils
@@ -22,6 +22,7 @@ ingredients:
   - 1 tsp vanilla extract
   - 3/4 tsp salt
   - 1 1/2 tbsp water
+source: https://www.crowdedkitchen.com/shaved-brussels-sprout-salad-2/
 ---
 
 1. Candied Pecans: Add everything but the pecans to a saucepan over medium heat and stir well, heating for 1 min. Add the pecans and stir well, then let cook for 3-5 minutes over medium heat, stirring often, until the glaze thickens and cooks down - it should look shiny and should be thick (if it's not, they will not set).

@@ -1,6 +1,6 @@
 ---
 category: soup
-author: NYT Cooking
+author: Anji
 ingredients:
   - 3 tablespoons olive oil, plus more for drizzling
   - 1 large onion, chopped
@@ -14,6 +14,7 @@ ingredients:
   - 1 large carrot, peeled and diced
   - Juice of ½ lemon, more to taste
   - 3 tablespoons chopped fresh cilantro
+source: https://cooking.nytimes.com/recipes/1016062-red-lentil-soup
 ---
 
 1. In a large pot, heat 3 tablespoons oil over high until hot and shimmering. Add onion and garlic, and sauté until golden, about 4 minutes.

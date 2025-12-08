@@ -1,7 +1,7 @@
 ---
 title: Naan (The Best Recipe!)
 category: bread
-author: rasamalaysia.com
+author: Anji
 ingredients:
   - 1 teaspoon sugar
   - 1/2 cup warm water
@@ -11,6 +11,7 @@ ingredients:
   - 1 teaspoon salt
   - 1 tablespoon oil, plus more for greasing the skillet
   - 3 tablespoons melted butter (or ghee)
+source: https://rasamalaysia.com/naan/#recipe
 ---
 
 1. In a small bowl, add the sugar, warm water, and yeast together. Stir to combine well. The yeast should be activated when it becomes foamy, about 10 minutes. Transfer the flour to a flat surface and make a well in the middle.

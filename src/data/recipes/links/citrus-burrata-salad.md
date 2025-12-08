@@ -1,7 +1,7 @@
 ---
 title: Citrus Burrata Salad
 category: salads
-author: Crowded Kitchen
+author: Anji
 ingredients:
   - 5 oz (1 small box) arugula, baby kale or spinach
   - 1 grapefruit
@@ -15,6 +15,7 @@ ingredients:
   - Olive oil
   - Pomegranate molasses or balsamic glaze
   - Salt &amp; pepper
+source: https://www.crowdedkitchen.com/citrus-burrata-salad/
 ---
 
 1. Preparing the citrus: Slice off both ends. Place flat side down on a cutting board and use a knife to cut off the peel and pith. Once all of the pith is removed, slice into thin rounds.

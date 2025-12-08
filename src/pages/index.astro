@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Recipe from "../components/Recipe.astro";
 import { getTitle } from "../utils";
 
-let recipes = await getCollection("recipes", (r) => r.id.includes("links"));
+let recipes = await getCollection("recipes");
 recipes = _.sortBy(
   recipes,
   (recipe) => recipe.data.category.id ?? "Other",

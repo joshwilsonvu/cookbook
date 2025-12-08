@@ -21,6 +21,7 @@ const recipes = defineCollection({
     // if given a record, splits the ingredient list into sections
     ingredients: z.union([z.array(z.string()), z.record(z.array(z.string()))]),
     notes: z.string().nullish(),
+    source: z.string().url().nullish(),
   }),
 });
 

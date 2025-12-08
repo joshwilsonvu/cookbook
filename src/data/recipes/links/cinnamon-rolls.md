@@ -1,6 +1,6 @@
 ---
 category: baking
-author: Ree Drummond
+author: Anji
 ingredients:
   - 2 cups whole milk (16oz)
   - ½ cup vegetable oil (4oz)
@@ -20,6 +20,7 @@ ingredients:
   - 1 tablespoon unsalted butter (melted)
   - 1 tablespoon strong brewed coffee
   - pinch of salt
+source: https://www.savingdessert.com/pioneer-womans-cinnamon-rolls/#recipe
 ---
 
 1. To make the dough: mix the milk, vegetable oil and sugar in a small sauce pan. Warm over medium heat just until the sugar is dissolved and the mixture reaches 95-100°F (lukewarm) on an instant read thermometer. Remove from the heat and pour into a large mixing bowl. Cool, if needed, until the milk reaches 95° to 100°F on an instant read thermometer.

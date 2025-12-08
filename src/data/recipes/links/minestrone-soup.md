@@ -1,6 +1,6 @@
 ---
 category: soup
-author: Love and Lemons
+author: Anji
 ingredients:
   - 2 tablespoons extra-virgin olive oil
   - 1 medium yellow onion (diced)
@@ -20,6 +20,7 @@ ingredients:
   - ½ cup chopped fresh parsley
   - Red pepper flakes
   - Grated Parmesan cheese (optional, for serving)
+source: https://www.loveandlemons.com/minestrone-soup/#recipe
 ---
 
 1. Heat the oil in a large pot over medium heat.
