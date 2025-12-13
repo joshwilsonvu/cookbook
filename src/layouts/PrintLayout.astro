@@ -15,7 +15,7 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
   </head>
-  <body class="transparent flex flex-col">
+  <body class="transparent flex flex-col web:grid web:grid-cols-[auto] web:gap-[0.25in] web:2xl:grid-cols-[auto,auto] web:justify-center web:2xl:*:first:col-start-2 web:mx-auto">
     <slot />
   </body>
 </html>
