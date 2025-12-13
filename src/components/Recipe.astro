@@ -36,11 +36,7 @@ const { Content } = await render(recipe);
         Array.isArray(ingredients) ? (
           <ul>
             {ingredients.map(format).map((ingredient) => (
-              <li class="flex items-baseline gap-1.5">
-                {/* <Underline class="flex-none w-4"/> */}
-                <span>-</span>
-                {ingredient}
-              </li>
+              <li>{ingredient}</li>
             ))}
           </ul>
         ) : (
