@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import "../styles/global.css";
 
 interface Props {
@@ -14,8 +15,13 @@ interface Props {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
+
+    <Font cssVariable="--font-beth-ellen" preload />
+    <Font cssVariable="--font-lato" preload />
   </head>
-  <body class="transparent flex flex-col web:grid web:grid-cols-[auto] web:gap-[0.25in] web:2xl:grid-cols-[auto,auto] web:justify-center web:2xl:*:first:col-start-2 web:mx-auto">
+  <body
+    class="transparent flex flex-col web:mx-auto web:grid web:grid-cols-[auto] web:justify-center web:gap-[0.25in] web:2xl:grid-cols-[auto,auto] web:2xl:*:first:col-start-2"
+  >
     <slot />
   </body>
 </html>

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { getTitle } from "../../utils";
 import Recipe from "../../components/Recipe.astro";
+import { Icon } from "astro-icon/components";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -17,5 +18,8 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={Astro.props.title}>
+  <a href="/" class="mb-8 inline-flex items-center gap-[1ch] text-tx-3 text-sm">
+    <Icon name="lucide:arrow-left" /> Back
+  </a>
   <Recipe id={Astro.params.id} />
 </Layout>

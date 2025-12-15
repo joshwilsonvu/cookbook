@@ -1,27 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&family=Beth+Ellen&family=Caveat+Brush&family=Kalam:wght@300;400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Shadows Into Light Two";
-  --font-display: "Beth Ellen";
-  /*--font-display: Kalam; */
-  /*--font-display: "Caveat Brush"; */
-  /*--font-sans: Poppins; */
-  --font-sans: Lato;
   --color-tx-2: #282726; /* flexoki base 900 */
   --color-tx-3: #403e3c; /* flexoki base 800 */
 }
 @theme inline {
+  --font-display: var(--font-beth-ellen);
+  --font-sans: var(--font-lato);
   --color-tx: var(--dyn-color-tx);
   --color-bg: var(--dyn-color-bg);
 }
 
 @utility h1 {
-  @apply mb-4 text-5xl leading-relaxed;
+  @apply font-display mb-4 text-5xl leading-tight text-balance text-tx;
 }
 
 @utility h2 {
-  @apply mb-2 text-3xl leading-loose;
+  @apply font-display mb-4 text-3xl leading-normal text-balance text-tx;
 }
 @custom-variant web {
   @media screen {
@@ -61,16 +56,14 @@
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-display text-balance text-tx;
-  }
-
   p,
   li {
     @apply mb-1 leading-normal text-pretty text-tx-2;
+  }
+
+  li > p:first-child {
+    /* To make ::marker and content appear on same line. */
+    @apply inline;
   }
 
   ul {

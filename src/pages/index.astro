@@ -2,19 +2,47 @@
 import { getCollection } from "astro:content";
 import * as _ from "lodash-es";
 import Layout from "../layouts/Layout.astro";
-import Recipe from "../components/Recipe.astro";
 import { getTitle } from "../utils";
+import Category from "../components/Category.astro";
+import RecipeCard from "../components/RecipeCard.astro";
 
-let recipes = await getCollection("recipes");
-recipes = _.sortBy(
-  recipes,
-  (recipe) => recipe.data.category.id ?? "Other",
-  (recipe) => getTitle(recipe.id),
-);
+const recipes = await getCollection("recipes");
+// const courses = new Set(recipes.map((r) => r.data.course));
+// recipes = _.sortBy(
+//   recipes,
+//   (recipe) => recipe.data.course ?? "Other",
+//   (recipe) => getTitle(recipe.id),
+// );
+
+function recipesByCourse(course: string) {
+  return recipes.filter((r) => r.data.course === course);
+}
+
 ---
 
 <Layout title="Our kitchen table">
   <div class="flex flex-col gap-20">
-    {recipes.map((recipe) => <Recipe id={recipe.id} />)}
+    <section>
+      <h1 class="h1">Our kitchen table</h1>
+      <p class="text-lg">Everyday recipes from our family & friends.</p>
+    </section>
+    <Category name="Entrées">
+      {recipesByCourse("entrée").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
+    <Category name="Appetizers & sides">
+      {recipesByCourse("side").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
+    <Category name="Salads">
+      {recipesByCourse("salad").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
+    <Category name="Soups">
+      {recipesByCourse("soup").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
+    <Category name="Breakfast">
+      {recipesByCourse("breakfast").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
+    <Category name="Drinks">
+      {recipesByCourse("beverage").map((r) => <RecipeCard id={r.id} />)}
+    </Category>
   </div>
 </Layout>

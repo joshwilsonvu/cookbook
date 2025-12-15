@@ -1,0 +1,10 @@
+---
+interface Props {
+  name: string;
+}
+---
+
+<section>
+  <h2 class="h2 mb-6">{Astro.props.name}</h2>
+  <div class="list-style-none flex flex-wrap gap-x-8 gap-y-6"><slot /></div>
+</section>

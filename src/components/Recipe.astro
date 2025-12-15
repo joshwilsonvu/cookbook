@@ -21,7 +21,7 @@ const { Content } = await render(recipe);
 
 <article class={twMerge("break-inside-avoid", Astro.props.class)}>
   <div class="mb-8">
-    <h2 class="h1 mb-0 capitalize">{title || getTitle(id)}</h2>
+    <h2 class="h1 capitalize">{title || getTitle(id)}</h2>
     <p class="flex items-center gap-[1ch] italic">
       <Icon name="lucide:heart" class="text-lg" />
       From {author}&apos;s kitchen
