@@ -1,6 +1,6 @@
 ---
 title: Eggless Fudgy Brownies
-category: desserts
+course: dessert
 author: Anji
 ingredients:
   - 1/2 cup milk

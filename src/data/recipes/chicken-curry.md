@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Paul
 ingredients:
   Marinated chicken:

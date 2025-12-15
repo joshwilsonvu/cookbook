@@ -1,5 +1,5 @@
 ---
-category: desserts
+course: dessert
 author: Gabby
 ingredients:
   - 1 cup milk

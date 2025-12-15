@@ -9,7 +9,7 @@ ingredients:
   - 1/4 cup fat-free plain Greek yogurt
   - Two 9.75 ounce cans 98% fat-free chunk white chicken breast, drained and flaked (fresh cooked chicken breast can be substituted)
 notes: Yields 15 1/4 cup servings
-category: sides
+course: side
 ---
 
 1. Place cream cheese in a large microwave-safe bowl and stir until smooth.

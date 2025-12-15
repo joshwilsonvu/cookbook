@@ -1,7 +1,7 @@
 ---
 title: Arroz con Salchichas
 author: Evangeline
-category: mains
+course: entrée
 ingredients:
   - 2 cups rice
   - 1 teaspoon paprika

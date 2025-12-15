@@ -1,6 +1,6 @@
 ---
 title: Cider Chicken
-category: mains
+course: entrée
 author: Anji
 ingredients:
   - 8-10 boneless, skinless chicken thighs

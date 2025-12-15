@@ -1,6 +1,6 @@
 ---
 title: Yellow moong dal
-category: sides
+course: side
 author: Paul
 ingredients:
   - 1 cup yellow Moong Dal, rinsed

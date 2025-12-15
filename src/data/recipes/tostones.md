@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Evangeline
 ingredients:
   Tostones:

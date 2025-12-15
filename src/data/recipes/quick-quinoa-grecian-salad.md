@@ -1,5 +1,5 @@
 ---
-category: soups-and-salads
+course: salad
 author: Shilee
 ingredients:
   - 2 cups uncooked quinoa

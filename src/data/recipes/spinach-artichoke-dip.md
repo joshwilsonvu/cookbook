@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Polly
 title: Spinach-Artichoke Dip
 ingredients:

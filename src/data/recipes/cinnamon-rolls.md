@@ -1,5 +1,5 @@
 ---
-category: baking
+course: breakfast
 author: Anji
 ingredients:
   - 2 cups whole milk (16oz)

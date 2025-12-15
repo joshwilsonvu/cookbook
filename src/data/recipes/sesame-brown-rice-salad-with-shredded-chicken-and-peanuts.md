@@ -1,6 +1,6 @@
 ---
 title: Sesame Brown Rice Salad with Shredded Chicken and Peanuts
-category: soups-and-salads
+course: salad
 author: Polly
 ingredients:
   - 1 cup long-grain brown rice

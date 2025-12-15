@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Anji
 ingredients:
   - 3-4 lb beef roast

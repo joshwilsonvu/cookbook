@@ -1,6 +1,6 @@
 ---
 title: White Sangria
-category: drinks
+course: beverage
 author: Polly
 ingredients:
   - 1/3 cup brandy

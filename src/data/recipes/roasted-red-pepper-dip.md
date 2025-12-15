@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Polly
 ingredients:
   - 1 cup roasted red peppers, rinsed and drained

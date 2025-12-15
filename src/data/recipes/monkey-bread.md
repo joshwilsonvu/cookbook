@@ -1,5 +1,5 @@
 ---
-category: baking
+course: dessert
 author: Anji
 ingredients:
   - 2 tablespoons softened butter

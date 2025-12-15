@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Elizabeth
 ingredients:
   - 1 lb. lean ground hamburger or turkey

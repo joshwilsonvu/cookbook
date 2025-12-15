@@ -1,6 +1,6 @@
 ---
 author: Sam
-category: sides
+course: side
 ingredients:
   - 1 cup vinegar
   - 1 cup water

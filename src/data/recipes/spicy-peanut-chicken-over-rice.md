@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Polly
 ingredients:
   - 1 tablespoon peanut oil

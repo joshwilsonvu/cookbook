@@ -1,5 +1,5 @@
 ---
-category: salad
+course: salad
 author: Anji
 ingredients:
   - 12 ounces shaved brussels sprouts, stems removed

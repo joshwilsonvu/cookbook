@@ -1,6 +1,6 @@
 ---
 author: Polly
-category: mains
+course: entrée
 ingredients:
   Chili:
     - 2 cans garbanzo beans, drained

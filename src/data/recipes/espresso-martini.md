@@ -1,5 +1,5 @@
 ---
-category: drinks
+course: beverage
 author: Sam
 ingredients:
   - 1.5 oz dark rum (Bumbu XO)

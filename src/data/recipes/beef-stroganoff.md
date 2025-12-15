@@ -1,7 +1,7 @@
 ---
 title: Beef Stroganoff
 author: Polly
-category: mains
+course: entrée
 notes: Yields 4 servings (about 1 cup stroganoff and 1/2 cup noodles)
 ingredients:
   - 1 pound ground sirloin

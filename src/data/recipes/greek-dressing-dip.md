@@ -1,6 +1,6 @@
 ---
 title: Anji's Greek Dressing/Dip
-category: sides
+course: side
 author: Anji
 ingredients:
   - 1/4–1/2 cup crumbled feta cheese

@@ -1,6 +1,6 @@
 ---
 title: Korean Beef Bowl Recipe
-category: mains
+course: entrée
 author: Anji
 ingredients:
   - 1/4 cup Tamari (GF, reduced sodium soy sauce)

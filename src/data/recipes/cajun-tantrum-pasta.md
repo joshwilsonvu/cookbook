@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Sam
 ingredients:
   Pasta:

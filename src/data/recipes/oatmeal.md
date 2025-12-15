@@ -1,6 +1,6 @@
 ---
 title: Slow cooker maple brown sugar oatmeal
-category: breakfast
+course: breakfast
 author: Anji
 ingredients:
   - 1 teaspoon melted coconut oil, butter, or cooking spray (for greasing crockpot)

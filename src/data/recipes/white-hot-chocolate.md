@@ -1,6 +1,6 @@
 ---
 title: White Hot Chocolate
-category: drinks
+course: beverage
 author: Polly
 subtitle: Kaleb's new favorite drink!
 ingredients:

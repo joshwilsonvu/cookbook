@@ -1,5 +1,5 @@
 ---
-category: appetizers
+course: side
 author: Polly
 ingredients:
   - 1 large head cauliflower cut into florets
@@ -28,4 +28,4 @@ source: https://feelgoodfoodie.net/recipe/buffalo-cauliflower-bites/
 
 5. Return to the oven and bake until they start to brown, about 15 minutes.
 
-6. Serve hot with ranch dressing, celery and carrots, if desired
+6. Serve hot with ranch dressing, celery and carrots, if desired.

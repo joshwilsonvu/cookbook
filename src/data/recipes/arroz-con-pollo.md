@@ -1,6 +1,6 @@
 ---
 title: Arroz con Pollo
-category: mains
+course: entrée
 author: Mom
 ingredients:
   - 2 cups rice

@@ -1,6 +1,6 @@
 ---
 title: Risotto with Turkey Sausage, Caramelized Onion, and Bitter Greens
-category: mains
+course: entrée
 author: Unknown
 ingredients:
   - 4 cups fat-free, low-sodium chicken broth

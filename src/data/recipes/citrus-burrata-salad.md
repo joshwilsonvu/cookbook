@@ -1,6 +1,6 @@
 ---
 title: Citrus Burrata Salad
-category: salads
+course: salad
 author: Anji
 ingredients:
   - 5 oz (1 small box) arugula, baby kale or spinach

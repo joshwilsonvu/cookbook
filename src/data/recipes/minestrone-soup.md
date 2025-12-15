@@ -1,5 +1,5 @@
 ---
-category: soup
+course: soup
 author: Anji
 ingredients:
   - 2 tablespoons extra-virgin olive oil

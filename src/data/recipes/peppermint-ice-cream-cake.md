@@ -1,5 +1,5 @@
 ---
-category: desserts
+course: dessert
 author: Polly
 ingredients:
   - Cooking spray

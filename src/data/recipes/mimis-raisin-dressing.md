@@ -1,6 +1,6 @@
 ---
 title: Mimi’s Raisin Dressing
-category: sides
+course: side
 author: Elizabeth
 ingredients:
   - 20-24 slices day-old bread

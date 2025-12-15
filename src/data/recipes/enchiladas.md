@@ -1,6 +1,6 @@
 ---
 title: Famous Enchiladas
-category: main course
+course: entrée
 author: Shilee
 ingredients:
   - 1 lb skinless boneless chicken breast

@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Polly
 ingredients:
   - 2 cups fat-free, less-sodium chicken broth

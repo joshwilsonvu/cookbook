@@ -1,5 +1,5 @@
 ---
-category: soup
+course: soup
 author: Anji
 ingredients:
   - 3 tablespoons olive oil, plus more for drizzling

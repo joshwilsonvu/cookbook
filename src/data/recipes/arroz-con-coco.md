@@ -1,7 +1,7 @@
 ---
 title: Arroz con Coco
 subtitle: Coconut Rice Pudding
-category: desserts
+course: dessert
 author: Evangeline
 ingredients:
   - 1 cup rice

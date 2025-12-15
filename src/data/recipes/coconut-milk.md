@@ -1,5 +1,5 @@
 ---
-category: desserts
+course: dessert
 author: Evangeline
 ingredients:
   - 1 coconut

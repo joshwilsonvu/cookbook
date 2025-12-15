@@ -1,5 +1,5 @@
 ---
-category: drinks
+course: beverage
 author: Kathy
 title: Coquito (Puerto Rican Eggnog)
 ingredients:

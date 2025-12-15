@@ -1,6 +1,6 @@
 ---
 title: Naan (The Best Recipe!)
-category: bread
+course: side
 author: Anji
 ingredients:
   - 1 teaspoon sugar

@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Sam
 ingredients:
   - 360 grams all purpose flour

@@ -1,5 +1,5 @@
 ---
-category: mains
+course: entrée
 author: Wilson Family
 ingredients:
   - 3-4 lbs skinless, bone-in chicken (or 2 lbs boneless)

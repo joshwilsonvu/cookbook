@@ -1,6 +1,6 @@
 ---
 title: Turtle Pumpkin Ice Cream Cake
-category: desserts
+course: dessert
 author: Polly
 ingredients:
   - 1 pound ginger snaps

@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Shilee
 ingredients:
   - 2 (16 oz) cans refried beans

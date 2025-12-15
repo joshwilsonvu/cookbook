@@ -1,6 +1,6 @@
 ---
 title: Arroz con Gandules
-category: mains
+course: entrée
 author: Evangeline
 ingredients:
   - ½ pound pork loin (optional)

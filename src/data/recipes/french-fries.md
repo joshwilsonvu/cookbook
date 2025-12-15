@@ -1,5 +1,5 @@
 ---
-category: sides
+course: side
 author: Gabby
 ingredients:
   - 6–8 potatoes

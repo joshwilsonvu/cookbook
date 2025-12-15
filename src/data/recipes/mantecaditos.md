@@ -1,5 +1,5 @@
 ---
-category: desserts
+course: dessert
 author: Evangeline
 ingredients:
   - 1/2 cup butter (1/4 lb or one stick)
