@@ -2,11 +2,9 @@ name: Deploy
 
 permissions:
   contents: read # access to check out code and install dependencies
+  deployments: write
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
@@ -16,13 +14,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v6
         with:
-          cache: pnpm
           node-version: 25
-      - name: Install dependencies
-        run: pnpm install
+      - uses: pnpm/action-setup@v4.2.0
+        with:
+          run_install: true
       - name: Build
         run: pnpm build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=cookbook
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
