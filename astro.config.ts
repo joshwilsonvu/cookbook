@@ -27,10 +27,6 @@ export default defineConfig({
       },
     ],
   },
-  // make recipes available at top level
-  redirects: {
-    "/[...id]": "/recipes/[...id]",
-  },
   experimental: {
     fonts: [
       {
