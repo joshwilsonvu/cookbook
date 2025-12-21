@@ -19,9 +19,9 @@ jobs:
           cache: pnpm
           node-version: 25
       - name: Install dependencies
-        uses: pnpm install
+        run: pnpm install
       - name: Build
-        uses: pnpm build
+        run: pnpm build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
