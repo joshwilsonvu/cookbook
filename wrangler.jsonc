@@ -1,0 +1,5 @@
+{
+  "name": "cookbook",
+  "compatibility_date": "2025-12-21", // Update to the day you deploy
+  "pages_build_output_dir": "./dist",
+}
