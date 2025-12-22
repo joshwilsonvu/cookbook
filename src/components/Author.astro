@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  author: string;
+}
+
+const { author } = Astro.props;
+const possessive = author.endsWith("s") ? `${author}’` : `${author}’s`;
+---
+
+<p class="flex flex-none items-center text-sm italic">
+  <Icon name="lucide:heart" class="me-[1ch]" />
+  From {possessive} kitchen
+</p>

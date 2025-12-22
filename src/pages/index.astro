@@ -4,7 +4,7 @@ import * as _ from "lodash-es";
 import Layout from "../layouts/Layout.astro";
 import { getTitle } from "../utils";
 import Category from "../components/Category.astro";
-import RecipeCard from "../components/RecipeCard.astro";
+import RecipeItem from "../components/RecipeItem.astro";
 
 const recipes = await getCollection("recipes");
 // const courses = new Set(recipes.map((r) => r.data.course));
@@ -15,34 +15,36 @@ const recipes = await getCollection("recipes");
 // );
 
 function recipesByCourse(course: string) {
-  return recipes.filter((r) => r.data.course === course);
+  return _.sortBy(
+    recipes.filter((r) => r.data.course === course),
+    (r) => getTitle(r),
+  );
 }
-
 ---
 
-<Layout title="Our kitchen table">
+<Layout title="Our kitchen table" class="max-w-5xl">
   <div class="flex flex-col gap-20">
     <section>
       <h1 class="h1">Our kitchen table</h1>
       <p class="text-lg">Everyday recipes from our family & friends.</p>
     </section>
     <Category name="Entrées">
-      {recipesByCourse("entrée").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("entrée").map((r) => <RecipeItem id={r.id} />)}
     </Category>
     <Category name="Appetizers & sides">
-      {recipesByCourse("side").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("side").map((r) => <RecipeItem id={r.id} />)}
     </Category>
     <Category name="Salads">
-      {recipesByCourse("salad").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("salad").map((r) => <RecipeItem id={r.id} />)}
     </Category>
     <Category name="Soups">
-      {recipesByCourse("soup").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("soup").map((r) => <RecipeItem id={r.id} />)}
     </Category>
     <Category name="Breakfast">
-      {recipesByCourse("breakfast").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("breakfast").map((r) => <RecipeItem id={r.id} />)}
     </Category>
     <Category name="Drinks">
-      {recipesByCourse("beverage").map((r) => <RecipeCard id={r.id} />)}
+      {recipesByCourse("beverage").map((r) => <RecipeItem id={r.id} />)}
     </Category>
   </div>
 </Layout>

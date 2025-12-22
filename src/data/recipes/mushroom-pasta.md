@@ -1,5 +1,5 @@
 ---
-title: Anji's Mushroom Pasta
+title: Mushroom Pasta
 course: entrée
 author: Anji
 ingredients:

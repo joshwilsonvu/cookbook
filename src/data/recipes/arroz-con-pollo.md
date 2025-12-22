@@ -1,7 +1,7 @@
 ---
 title: Arroz con Pollo
 course: entrée
-author: Mom
+author: Evangeline
 ingredients:
   - 2 cups rice
   - 6 pieces chicken

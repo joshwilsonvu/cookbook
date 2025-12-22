@@ -1,0 +1,21 @@
+---
+import { getEntry } from "astro:content";
+import { getTitle } from "../utils";
+import Author from "./Author.astro";
+
+interface Props {
+  id: string;
+}
+
+const recipe = await getEntry("recipes", Astro.props.id)!;
+---
+
+<a href={`/recipes/${recipe.id}`} class="flex items-baseline gap-2 group">
+  <p class="flex-shrink text-lg group-hover:underline group-focus:underline">
+    {getTitle(recipe)}
+  </p>
+  <div class="hidden sm:contents">
+    <span class="flex-1 h-px border-t border-dotted group-hover:border-solid"></span>
+    <Author author={recipe.data.author}>
+  </div>
+</a>

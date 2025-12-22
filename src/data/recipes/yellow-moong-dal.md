@@ -1,5 +1,5 @@
 ---
-title: Yellow moong dal
+title: Yellow Moong Dal
 course: side
 author: Paul
 ingredients:

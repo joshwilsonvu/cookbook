@@ -1,23 +1,19 @@
 @import "tailwindcss";
+@import "./flexoki.css";
 
-@theme {
-  --color-tx-2: #282726; /* flexoki base 900 */
-  --color-tx-3: #403e3c; /* flexoki base 800 */
-}
 @theme inline {
   --font-display: var(--font-beth-ellen);
   --font-sans: var(--font-lato);
-  --color-tx: var(--dyn-color-tx);
-  --color-bg: var(--dyn-color-bg);
 }
 
 @utility h1 {
-  @apply font-display mb-4 text-5xl leading-tight text-balance text-tx;
+  @apply mb-4 font-display text-5xl leading-tight text-balance text-tx;
 }
 
 @utility h2 {
-  @apply font-display mb-4 text-3xl leading-normal text-balance text-tx;
+  @apply mb-4 font-display text-3xl leading-normal text-balance text-tx;
 }
+
 @custom-variant web {
   @media screen {
     @slot;
@@ -39,17 +35,6 @@
 }
 
 @layer base {
-  :root {
-    --dyn-color-tx: black;
-    --dyn-color-bg: white;
-  }
-  @media screen {
-    :root {
-      /*--dyn-color-bg: #fffcf0;*/
-      --dyn-color-tx: #100f0f;
-    }
-  }
-
   @media screen {
     :root {
       @apply bg-bg text-tx;
@@ -58,7 +43,7 @@
 
   p,
   li {
-    @apply mb-1 leading-normal text-pretty text-tx-2;
+    @apply mb-1 leading-normal text-pretty;
   }
 
   li > p:first-child {
@@ -67,16 +52,20 @@
   }
 
   ul {
-    @apply list-inside list-disc;
+    @apply list-inside list-none;
     /* Reduce space between disc and content */
     li::before {
-      content: "";
-      @apply -ms-2;
+      content: "◦";
+      @apply me-2;
     }
   }
 
   ol {
-    @apply list-inside list-decimal;
+    @apply list-inside list-none;
+    li::before {
+      content: counter(list-item) ".";
+      @apply me-2;
+    }
   }
 
   li::marker {

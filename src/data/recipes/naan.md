@@ -1,5 +1,5 @@
 ---
-title: Naan (The Best Recipe!)
+title: Naan
 course: side
 author: Anji
 ingredients:

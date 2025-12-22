@@ -1,7 +1,7 @@
 ---
 import { twMerge } from "tailwind-merge";
 import { getEntry, render } from "astro:content";
-import { Icon } from "astro-icon/components";
+import Author from "./Author.astro";
 import { format, getTitle } from "../utils";
 
 interface Props {
@@ -21,41 +21,38 @@ const { Content } = await render(recipe);
 
 <article class={twMerge("break-inside-avoid", Astro.props.class)}>
   <div class="mb-8">
-    <h2 class="h1 capitalize">{title || getTitle(id)}</h2>
-    <p class="flex items-center gap-[1ch] italic">
-      <Icon name="lucide:heart" class="text-lg" />
-      From {author}&apos;s kitchen
-    </p>
-  </div>
-  <div class="flex flex-col items-stretch gap-8 md:flex-row print:flex-row">
-    <div class="max-w-max grow-1 basis-0">
-      <h3 class="h2">ingredients</h3>
-      {
-        Array.isArray(ingredients) ? (
-          <ul>
-            {ingredients.map(format).map((ingredient) => (
-              <li>{ingredient}</li>
-            ))}
-          </ul>
-        ) : (
-          Object.entries(ingredients).map(([section, sectionIngredients]) => (
-            <div>
-              <p class="mt-4 font-bold capitalize">{section}</p>
-              <ul>
-                {sectionIngredients.map(format).map((ingredient) => (
-                  <li>{ingredient}</li>
-                ))}
-              </ul>
-            </div>
-          ))
-        )
-      }
-      {notes && <p class="whitespace-pre-wrap">{notes}</p>}
-    </div>
-    <div class="hidden basis-0.25 bg-tx md:block print:block"></div>
-    <div class="grow-2 basis-0">
-      <h3 class="h2">directions</h3>
-      <Content />
+    <h2 class="h1 capitalize">{getTitle(recipe)}</h2>
+    <Author author={recipe.data.author} />
+    <div class="flex flex-col items-stretch gap-8 md:flex-row print:flex-row">
+      <div class="max-w-max grow-1 basis-0">
+        <h3 class="h2">ingredients</h3>
+        {
+          Array.isArray(ingredients) ? (
+            <ul>
+              {ingredients.map(format).map((ingredient) => (
+                <li>{ingredient}</li>
+              ))}
+            </ul>
+          ) : (
+            Object.entries(ingredients).map(([section, sectionIngredients]) => (
+              <div>
+                <p class="mt-4 font-bold capitalize">{section}</p>
+                <ul>
+                  {sectionIngredients.map(format).map((ingredient) => (
+                    <li>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          )
+        }
+        {notes && <p class="whitespace-pre-wrap">{notes}</p>}
+      </div>
+      <div class="hidden basis-0.25 bg-tx md:block print:block"></div>
+      <div class="grow-2 basis-0">
+        <h3 class="h2">directions</h3>
+        <Content />
+      </div>
     </div>
   </div>
 </article>

@@ -1,9 +1,15 @@
 import { basename } from "node:path/posix";
+import type { CollectionEntry } from "astro:content";
 import type { ReplaceFunction } from "hast-util-find-and-replace";
 import { decodeHTML } from "entities";
 
-export function getTitle(id: string) {
-  const file = basename(id);
+type Recipe = CollectionEntry<"recipes">;
+
+export function getTitle(recipe: Recipe) {
+  if (recipe.data.title) {
+    return recipe.data.title;
+  }
+  const file = basename(recipe.id);
   const title = file.replace(/[_-]+/g, " ");
   return titleCase(title);
 }

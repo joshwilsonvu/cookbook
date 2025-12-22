@@ -1,6 +1,6 @@
 ---
 course: entrée
-author: Wilson Family
+author: Anji
 ingredients:
   - 3-4 lbs skinless, bone-in chicken (or 2 lbs boneless)
   - 1 can Coca-Cola

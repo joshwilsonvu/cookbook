@@ -1,5 +1,5 @@
 ---
-title: Anji's Greek Dressing/Dip
+title: Greek Dressing / Dip
 course: side
 author: Anji
 ingredients:
