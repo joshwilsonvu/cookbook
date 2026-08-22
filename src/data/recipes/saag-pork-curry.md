@@ -32,9 +32,9 @@ ingredients:
 ---
 
 1. The night before, mix the pork and marinade ingredients in a large bowl. Cover and let the pork marinate in the refrigerator overnight.
-2. Chop the yellow onions and green bell pepper together roughly (1/2 to 3/4 inch pieces), with a food processor if available. Set aside. 
+2. Chop the yellow onions and green bell pepper together roughly (1/2 to 3/4 inch pieces), with a food processor if available. Set aside.
 3. Finely chop the ginger, garlic, and hot pepper (1/4 inch pieces) in a food processor. Add to the chopped onions and bell pepper.
-4. Heat oil in a thick pan over medium heat. Add the chopped vegetables and sauté until softened, about 5 minutes. 
+4. Heat oil in a thick pan over medium heat. Add the chopped vegetables and sauté until softened, about 5 minutes.
 5. Add the spices: turmeric, curry powder, oregano, ground cloves, paprika, bay leaves, cardamom seeds, and black pepper. Cook the spices for 2–3 minutes.
 6. Add the whole can of tomato sauce or chopped tomatoes and cook for 3 minutes.
 7. Add marinated pork and cook with little to no additional water. Turn the pork every 3-4 minutes until tender (about 15 minutes). Salt to taste.

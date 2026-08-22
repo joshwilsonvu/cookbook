@@ -1,19 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import * as _ from "lodash-es";
 import PrintLayout from "../layouts/PrintLayout.astro";
 import PrintPage from "../components/PrintPage.astro";
 import Recipe from "../components/Recipe.astro";
-
-// const categories = _.sortBy(
-//   await getCollection("categories"),
-//   (category) => category.data.order ?? 0
-// );
-
-// const recipesByCategory = _.groupBy(
-//   recipes,
-//   (recipe) => recipe.data.category.id ?? 'Other'
-// );
 ---
 
 <PrintLayout title="Our kitchen table">

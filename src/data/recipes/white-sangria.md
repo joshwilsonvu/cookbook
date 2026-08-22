@@ -17,4 +17,3 @@ ingredients:
 1. Combine brandy, peach schnapps, and sugar in a large pitcher; stir to dissolve sugar.
 2. Stir in wine, lemon, orange, apple, and peach. Chill at least 2 hours or until cold.
 3. Stir in sparkling water and serve.
-

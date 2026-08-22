@@ -4,12 +4,12 @@ course: beverage
 author: Polly
 subtitle: Kaleb's new favorite drink!
 ingredients:
-- 3 cups 1% low fat milk
-- 1/8 teaspoon grated whole nutmeg, plus more for serving (optional)
-- 1 (3-inch) cinnamon stick
-- 1/2 cup premium white chocolate chips
-- 1/2 teaspoon vanilla extract
-- 1/2 cup frozen fat-free whipped topping, thawed
+  - 3 cups 1% low fat milk
+  - 1/8 teaspoon grated whole nutmeg, plus more for serving (optional)
+  - 1 (3-inch) cinnamon stick
+  - 1/2 cup premium white chocolate chips
+  - 1/2 teaspoon vanilla extract
+  - 1/2 cup frozen fat-free whipped topping, thawed
 ---
 
 1. Combine milk, nutmeg, and cinnamon stick in a medium saucepan over medium heat; bring to a simmer, stirring constantly.

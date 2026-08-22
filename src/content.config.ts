@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 import { glob } from "astro/loaders";
 
@@ -18,10 +19,13 @@ const recipes = defineCollection({
       "beverage",
     ]),
     // if given a record, splits the ingredient list into sections
-    ingredients: z.union([z.array(z.string()), z.record(z.array(z.string()))]),
+    ingredients: z.union([
+      z.array(z.string()),
+      z.record(z.string(), z.array(z.string())),
+    ]),
     notes: z.string().nullish(),
     collections: z.array(z.string()).nullish(),
-    source: z.string().url().nullish(),
+    source: z.url().nullish(),
   }),
 });
 

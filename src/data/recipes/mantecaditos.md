@@ -19,4 +19,3 @@ ingredients:
 7. Press with the palm of your hand.
 8. Place a halved cherry, jam, or chocolate in the center of each cookie.
 9. Bake for 25 minutes or until golden brown.
-

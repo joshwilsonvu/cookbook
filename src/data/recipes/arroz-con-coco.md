@@ -15,8 +15,8 @@ notes: Traditionally served during Christmas in Puerto Rico.
 ---
 
 1. Soak rice in water for at least 2 hours or overnight to soften.
-4. In a heavy saucepan, combine 3 cups coconut milk, ginger, cinnamon sticks, cloves, and salt to boil. Add rice.
-5. Reduce heat to low and cook for 30 minutes without stirring.
-6. After 30 minutes, stir and add sugar, raisins, and 1 more cup of coconut milk.
-7. Cook on low heat for 30 more minutes, stirring every 10 minutes.
-8. Serve in a deep dish and sprinkle with cinnamon powder.
+2. In a heavy saucepan, combine 3 cups coconut milk, ginger, cinnamon sticks, cloves, and salt to boil. Add rice.
+3. Reduce heat to low and cook for 30 minutes without stirring.
+4. After 30 minutes, stir and add sugar, raisins, and 1 more cup of coconut milk.
+5. Cook on low heat for 30 more minutes, stirring every 10 minutes.
+6. Serve in a deep dish and sprinkle with cinnamon powder.

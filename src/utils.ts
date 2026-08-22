@@ -1,6 +1,5 @@
 import { basename } from "node:path/posix";
 import type { CollectionEntry } from "astro:content";
-import type { ReplaceFunction } from "hast-util-find-and-replace";
 import { decodeHTML } from "entities";
 
 type Recipe = CollectionEntry<"recipes">;
@@ -28,12 +27,12 @@ export function capitalize(s: string) {
 
 /** Replacers must be functions to work with both String.prototype.replace and hast-util-find-and-replace. */
 export const formatters: Array<
-  [RegExp, Parameters<typeof String.prototype.replace>[1] & ReplaceFunction]
+  [RegExp, Parameters<typeof String.prototype.replace>[1]]
 > = [
-  // use en dash for ranges
-  [/(\d+)-(\d+)/g, (match, n1, n2) => `${n1}–${n2}`],
+  // use en dash for ranges, not hyphen or em dash
+  [/(\d+)[-—](\d+)/g, (_match, n1, n2) => `${n1}–${n2}`],
   // use times symbol instead of "x" for dimensions
-  [/(\d+)x(\d+)/g, (match, n1, n2) => `${n1}×${n2}`],
+  [/(\d+)x(\d+)/g, (_match, n1, n2) => `${n1}×${n2}`],
   // good fractions
   [/\b1\/2\b/g, () => "½"],
   [/\b1\/3\b/g, () => "⅓"],
