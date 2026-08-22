@@ -4,6 +4,8 @@ import icon from "astro-icon";
 import { findAndReplace } from "hast-util-find-and-replace";
 import { formatters } from "./src/utils";
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -17,8 +19,8 @@ export default defineConfig({
     enabled: false,
   },
   output: "static",
-  site: "https://cookbook.joshwilsonvu.com",
-  integrations: [icon()],
+  site: "https://ourkitchentable.us",
+  integrations: [icon(), preact()],
   markdown: {
     rehypePlugins: [
       () => (tree: any) => {
@@ -31,15 +33,16 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.google(),
-        // also considered "Shadows Into Light Two", "Kalam", "Caveat Brush"
-        name: "Beth Ellen",
-        cssVariable: "--font-beth-ellen",
+        // also considered "Beth Ellen", "Shadows Into Light Two", "Kalam", "Caveat Brush", "Homemade Apple"
+        // name: "Rock Salt",
+        name: "Mansalva",
+        cssVariable: "--font-g-display",
       },
       {
         provider: fontProviders.google(),
         // also considered "Poppins"
-        name: "Lato",
-        cssVariable: "--font-lato",
+        name: "Manrope",
+        cssVariable: "--font-g-body",
       },
     ],
   },

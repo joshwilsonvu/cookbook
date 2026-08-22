@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import * as _ from "lodash-es";
+import Layout from "../layouts/Layout.astro";
+import { getTitle } from "../utils";
+import Category from "../components/Category.astro";
+import RecipeItem from "../components/RecipeItem.astro";
+import Header from "../components/Header.astro";
+
+const recipes = _.sortBy(
+  (await getCollection("recipes")).filter(
+    (recipe) => recipe.data.author && recipe.data.author !== "Unknown",
+  ),
+  (recipe) => recipe.data.author,
+  (recipe) => getTitle(recipe),
+);
+---
+
+<Layout title="Our kitchen table" class="max-w-5xl">
+  <div class="flex flex-col gap-20">
+    <Header />
+    <section>
+      <Category>
+        {recipes.map((r) => <RecipeItem id={r.id} />)}
+      </Category>
+    </section>
+  </div>
+</Layout>

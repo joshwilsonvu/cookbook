@@ -1,10 +1,10 @@
 ---
 interface Props {
-  name: string;
+  name?: string;
 }
 ---
 
 <section>
-  <h2 class="h2 mb-6">{Astro.props.name}</h2>
-  <div class="list-style-none flex flex-col gap-2 md:gap-0"><slot /></div>
+  {Astro.props.name && <h2 class="h2 mb-6">{Astro.props.name}</h2>}
+  <div class="list-style-none flex flex-col gap-4 sm:gap-2"><slot /></div>
 </section>

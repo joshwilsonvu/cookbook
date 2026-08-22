@@ -10,7 +10,7 @@ interface Props {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-(image:--background-image-paper)">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -18,11 +18,14 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
 
-    <Font cssVariable="--font-beth-ellen" preload />
-    <Font cssVariable="--font-lato" preload />
+    <Font cssVariable="--font-g-display" preload />
+    <Font cssVariable="--font-g-body" preload />
   </head>
   <body
-    class={twMerge("mx-auto max-w-7xl px-6 py-8 lg:p-20", Astro.props.class)}
+    class={twMerge(
+      "mx-auto max-w-7xl px-6 py-8 md:px-8 lg:p-20",
+      Astro.props.class,
+    )}
   >
     <slot />
   </body>

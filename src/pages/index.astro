@@ -2,17 +2,12 @@
 import { getCollection } from "astro:content";
 import * as _ from "lodash-es";
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 import { getTitle } from "../utils";
 import Category from "../components/Category.astro";
 import RecipeItem from "../components/RecipeItem.astro";
 
 const recipes = await getCollection("recipes");
-// const courses = new Set(recipes.map((r) => r.data.course));
-// recipes = _.sortBy(
-//   recipes,
-//   (recipe) => recipe.data.course ?? "Other",
-//   (recipe) => getTitle(recipe.id),
-// );
 
 function recipesByCourse(course: string) {
   return _.sortBy(
@@ -24,10 +19,7 @@ function recipesByCourse(course: string) {
 
 <Layout title="Our kitchen table" class="max-w-5xl">
   <div class="flex flex-col gap-20">
-    <section>
-      <h1 class="h1">Our kitchen table</h1>
-      <p class="text-lg">Everyday recipes from our family & friends.</p>
-    </section>
+    <Header />
     <Category name="Entrées">
       {recipesByCourse("entrée").map((r) => <RecipeItem id={r.id} />)}
     </Category>

@@ -1,0 +1,9 @@
+---
+const isHome = Astro.routePattern === "/";
+---
+
+<p class="text-blue-600">
+  <a href={isHome ? "/by-author" : "/"}
+    >Group by {isHome ? "author" : "category"}</a
+  >
+</p>
