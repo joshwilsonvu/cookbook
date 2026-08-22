@@ -26,7 +26,6 @@ export default defineConfig({
   },
 
   scopedStyleStrategy: "class",
-
   devToolbar: {
     enabled: false,
   },
@@ -58,6 +57,10 @@ export default defineConfig({
     },
   ],
 
+  build: {
+    format: "file",
+    concurrency: 4,
+  },
   adapter: cloudflare({
     prerenderEnvironment: "node", // for Satteri I think
   }),
