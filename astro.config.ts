@@ -7,6 +7,8 @@ import { format } from "./src/utils";
 
 import preact from "@astrojs/preact";
 
+import cloudflare from "@astrojs/cloudflare";
+
 const recipeFormatter = defineHastPlugin({
   name: "recipe-formatter",
   text: (node) => {
@@ -22,19 +24,24 @@ export default defineConfig({
       host: true,
     },
   },
+
   scopedStyleStrategy: "class",
+
   devToolbar: {
     enabled: false,
   },
+
   output: "static",
   site: "https://ourkitchentable.us",
   integrations: [icon(), preact({ compat: false })],
+
   markdown: {
     processor: satteri({
       features: { smartPunctuation: true },
       hastPlugins: [recipeFormatter],
     }),
   },
+
   fonts: [
     {
       provider: fontProviders.google(),
@@ -50,4 +57,7 @@ export default defineConfig({
       cssVariable: "--font-g-body",
     },
   ],
+
+  adapter: cloudflare(),
+  session: false,
 });

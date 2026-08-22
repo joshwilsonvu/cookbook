@@ -9,16 +9,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
+    "@astrojs/cloudflare": "^14.2.3",
     "@astrojs/preact": "^6.0.4",
     "@iconify-json/lucide": "^1.2.125",
     "astro": "^7.2.4",
     "astro-icon": "^1.2.0",
     "entities": "^7.0.1",
     "lodash-es": "^4.18.1",
+    "octokit": "^5.0.5",
     "preact": "^10.29.8",
     "tailwind-merge": "^3.6.0"
   },

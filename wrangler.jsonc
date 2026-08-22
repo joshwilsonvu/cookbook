@@ -1,5 +1,13 @@
 {
   "name": "cookbook",
-  "compatibility_date": "2025-12-21", // Update to the day you deploy
+  "compatibility_date": "2026-08-22", // Update to the day you deploy
   "pages_build_output_dir": "./dist",
+  "vars": {
+    "GH_OWNER": "joshwilsonvu",
+    "GH_REPO": "cookbook",
+    "GH_DEFAULT_BRANCH": "main",
+    "DESTINATION_MARKDOWN_FOLDER": "src/data/recipes",
+    "MAX_SUBMISSIONS_PER_DAY": "20",
+  },
+  "preview_urls": true,
 }
