@@ -58,6 +58,8 @@ export default defineConfig({
     },
   ],
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    prerenderEnvironment: "node", // for Satteri I think
+  }),
   session: false,
 });

@@ -1,7 +1,6 @@
 {
   "name": "cookbook",
   "compatibility_date": "2026-08-22", // Update to the day you deploy
-  "pages_build_output_dir": "./dist",
   "vars": {
     "GH_OWNER": "joshwilsonvu",
     "GH_REPO": "cookbook",
