@@ -30,6 +30,10 @@ export default defineConfig({
     enabled: false,
   },
 
+  prefetch: {
+    defaultStrategy: "tap",
+    prefetchAll: true,
+  },
   output: "static",
   site: "https://ourkitchentable.us",
   integrations: [icon(), preact({ compat: false })],

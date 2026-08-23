@@ -38,5 +38,8 @@ function recipesByCourse(course: string) {
     <Category name="Drinks">
       {recipesByCourse("beverage").map((r) => <RecipeItem id={r.id} />)}
     </Category>
+    <Category name="Desserts">
+      {recipesByCourse("dessert").map((r) => <RecipeItem id={r.id} />)}
+    </Category>
   </div>
 </Layout>
