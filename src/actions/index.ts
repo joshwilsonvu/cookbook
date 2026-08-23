@@ -35,7 +35,7 @@ export const server = {
   submitRecipe: defineAction({
     accept: "form",
     input: inputSchema,
-    handler: async (input) => {
+    handler: async (input, context) => {
       // global rate limit
       const { success } = await env.RATE_LIMITER.limit({
         key: "recipe-creation",
@@ -47,14 +47,18 @@ export const server = {
         });
       }
 
-      const recipe = await createRecipe(input);
+      const recipe = await createRecipe(input, context.request.signal);
       await submitPr(recipe, input.text);
     },
   }),
 };
 
 const recipeSchema = z.object({
-  title: z.string().min(3).max(100),
+  title: z
+    .string()
+    .min(3)
+    .max(100)
+    .describe("A short, title-case name for a recipe."),
   course: z.enum([
     "entrée",
     "side",
@@ -64,23 +68,83 @@ const recipeSchema = z.object({
     "beverage",
     "dessert",
   ]),
-  author: z.string().min(1).max(100),
-  ingredients: z.array(z.string()),
-  instructions: z.string().min(10).max(10_000),
-  photoCaption: z.string().max(1000).nullish(),
+  author: z
+    .string()
+    .min(1)
+    .max(100)
+    .describe("The recipe author's first name."),
+  ingredients: z
+    .union([z.array(z.string()), z.record(z.string(), z.array(z.string()))])
+    .describe(
+      "Recipe ingredients in order of usage, formatted as quantity, unit (optional), name, and comma + pre-preparation instructions (optional). Strongly prefer a single array of ingredients, unless the recipe is clearly broken into distinct parts (ex. a dish and an accompanyment), in which case provide an object mapping part names to ingredients for each part.",
+    ),
+  instructions: z
+    .string()
+    .min(10)
+    .max(10_000)
+    .describe(
+      "A markdown ordered list describing the recipe steps. No headings. If given an introduction, include it above the list but keep it to 1-2 sentences max.",
+    ),
+  photoCaption: z
+    .string()
+    .max(1000)
+    .nullish()
+    .describe(
+      "A concise, food-magazine-style caption describing the visual appearance of the completed recipe.",
+    ),
 });
 type Recipe = z.infer<typeof recipeSchema>;
 
-async function createRecipe(input: Input): Promise<Recipe> {
-  
-  return {
-    title: "TODO",
-    course: "TODO",
-    author: "TODO",
-    ingredients: [],
-    instructions: "1. TODO\n",
-    photoCaption: "TODO",
-  };
+const RECIPE_SYSTEM_PROMPT = `Your task is to format the rough content of a recipe provided by the user into structured parts that will be used to format the recipe for a cookbook. You may paraphrase and editorialize the original content as needed such that the formatted recipe is clear, concise, and complete.
+Tone: straight-to-business with no fluff.
+Recipe instructions: Assume the reader is somewhat knowledgable and don't waste words on the obvious, but don't remove anything important. Keep mentions of ingredient names consistent between the ingredient list and instructions. If minor details seem to be missing, fill them in, but don't change the substance of the recipe. Do the best you can while preserving the user's original intent; that is the top priority.
+Example ingredients: ["16 oz pasta", "1 tsp oil", "3 cloves of garlic, minced", ...]
+Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining 1/2 cup of pasta water.\\n2. In a small skillet over medium heat, heat the oil and fry the garlic for 1 minute.\\n3. ..."`;
+
+async function createRecipe(
+  input: Input,
+  signal?: AbortSignal,
+): Promise<Recipe> {
+  const response = await env.AI.run(
+    "@cf/moonshotai/kimi-k2.5",
+    {
+      messages: [
+        {
+          role: "system",
+          content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
+        },
+        {
+          role: "user",
+          content: input.text,
+        },
+      ],
+      reasoning_effort: "medium",
+      response_format: {
+        type: "json_schema",
+        json_schema: {
+          name: "Recipe",
+          schema: recipeSchema.toJSONSchema({ io: "input" }),
+        },
+      },
+    },
+    { gateway: { id: "cookbook" } },
+  );
+  const message = response.choices[0];
+  if (message.finish_reason !== "stop") {
+    throw new ActionError({
+      code: "UNPROCESSABLE_CONTENT",
+      message: "Unexpected LLM response.",
+    });
+  }
+  const structuredOutput = message.message.content;
+  try {
+    return recipeSchema.parse(structuredOutput);
+  } catch (e) {
+    throw new ActionError({
+      code: "UNPROCESSABLE_CONTENT",
+      message: `Invalid LLM response: ${z.prettifyError(e)}`,
+    });
+  }
 }
 
 function formatRecipe(recipe: Recipe): string {
