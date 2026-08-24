@@ -1,0 +1,85 @@
+---
+import * as _ from "lodash-es";
+import Layout from "../layouts/Layout.astro";
+import { actions, isInputError, isActionError } from "astro:actions";
+
+// > Pages must be on-demand rendered when calling actions using a form action. Ensure prerendering
+// is disabled on the page before using this API.
+export const prerender = false;
+
+const result = Astro.getActionResult(actions.submitRecipe);
+console.log("Action result:", result);
+const isSuccess = result && !result.error;
+
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
+---
+
+<style>
+  .formcontrol {
+  }
+</style>
+<Layout title="Submit a recipe" class="max-w-5xl">
+  <h1 class="h1">Submit a recipe</h1>
+  <p>Paste a recipe here, and it will be reviewed and made public shortly.</p>
+  <p>
+    Don't worry about formatting. Just list the ingredients and the steps to
+    prepare the dish, and it will be formatted for you.
+  </p>
+  <form
+    id="recipe-form"
+    method="post"
+    action={actions.submitRecipe}
+    enctype="multipart/form-data"
+    class="mt-12 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2"
+  >
+    <label class="col-span-full grid grid-cols-subgrid">
+      <div>Name</div>
+      <input
+        name="name"
+        autocomplete="given-name"
+        placeholder="Josh"
+        required
+        class="rounded-sm border px-2 py-1"
+      />
+    </label>
+    {
+      inputErrors.name && (
+        <p class="col-start-2 text-red-800">{inputErrors.name}</p>
+      )
+    }
+    <label class="col-span-full grid grid-cols-subgrid">
+      <div>Recipe</div>
+      <textarea
+        name="text"
+        class="field-sizing-content min-h-32 rounded-sm border p-2"
+        placeholder="Write or paste a full recipe here."
+        required></textarea>
+    </label>
+    {
+      inputErrors.text && (
+        <p class="col-start-2 text-red-800">{inputErrors.text}</p>
+      )
+    }
+    <label class="col-start-2 flex gap-4">
+      <input type="checkbox" name="acknowledgement" required />
+      I acknowledge that this website is for family and friends, and somebody I know
+      is already listed here.
+    </label>
+    <div class="col-span-full">
+      <button
+        type="submit"
+        class="col-span-full mt-8 rounded-full border px-4 py-2"
+      >
+        Submit for review
+      </button>
+    </div>
+    <input type="hidden" name="type" value="text" />
+  </form>
+  {
+    isSuccess && (
+      <p class="text-green-800">
+        Successfully submitted recipe. Check back soon!
+      </p>
+    )
+  }
+</Layout>

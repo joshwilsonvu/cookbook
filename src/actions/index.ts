@@ -36,19 +36,18 @@ export const server = {
     accept: "form",
     input: inputSchema,
     handler: async (input, context) => {
-      // global rate limit
-      const { success } = await env.RATE_LIMITER.limit({
-        key: "recipe-creation",
-      });
-      if (!success) {
-        throw new ActionError({
-          code: "TOO_MANY_REQUESTS",
-          message: "Rate limit exceeded, try again later.",
-        });
-      }
+      console.log("Got input", input);
 
-      const recipe = await createRecipe(input, context.request.signal);
-      await submitPr(recipe, input.text);
+      async function asyncSubmit() {
+        const recipe = await createRecipe(input);
+
+        console.log("Formatted recipe", recipe);
+
+        const result = await submitPr(recipe, input.text);
+
+        console.log("Got result", result);
+      }
+      context.locals.cfContext.waitUntil(asyncSubmit());
     },
   }),
 };
@@ -101,12 +100,9 @@ Recipe instructions: Assume the reader is somewhat knowledgable and don't waste 
 Example ingredients: ["16 oz pasta", "1 tsp oil", "3 cloves of garlic, minced", ...]
 Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining 1/2 cup of pasta water.\\n2. In a small skillet over medium heat, heat the oil and fry the garlic for 1 minute.\\n3. ..."`;
 
-async function createRecipe(
-  input: Input,
-  signal?: AbortSignal,
-): Promise<Recipe> {
+async function createRecipe(input: Input): Promise<Recipe> {
   const response = await env.AI.run(
-    "@cf/moonshotai/kimi-k2.5",
+    "@cf/google/gemma-4-26b-a4b-it",
     {
       messages: [
         {
@@ -137,14 +133,14 @@ async function createRecipe(
     });
   }
   const structuredOutput = message.message.content;
-  try {
-    return recipeSchema.parse(structuredOutput);
-  } catch (e) {
+  const { data, error } = recipeSchema.safeParse(structuredOutput);
+  if (error) {
     throw new ActionError({
       code: "UNPROCESSABLE_CONTENT",
-      message: `Invalid LLM response: ${z.prettifyError(e)}`,
+      message: `Invalid LLM response: ${z.prettifyError(error)}`,
     });
   }
+  return data;
 }
 
 function formatRecipe(recipe: Recipe): string {
@@ -217,6 +213,7 @@ async function submitPr(recipe: Recipe, raw: string) {
     });
 
     return {
+      title: recipe.title,
       prUrl: pr.html_url,
     };
   } catch (err) {

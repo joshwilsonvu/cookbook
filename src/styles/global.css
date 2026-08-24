@@ -228,6 +228,10 @@
     @apply m-0 p-0;
   }
 
+  label {
+    display: block;
+  }
+
   :root {
     counter-reset: pageNumber;
   }
