@@ -14,9 +14,7 @@ export const server = {
           input,
         },
       });
-      console.log(
-        `Created workflow ${workflow.id}, status: ${await workflow.status()}`,
-      );
+      console.log(`Created workflow ${workflow.id}`);
     },
   }),
 };
