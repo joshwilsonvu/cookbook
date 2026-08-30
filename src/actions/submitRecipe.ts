@@ -1,8 +1,6 @@
-import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro/zod";
 import { env } from "cloudflare:workers";
 import { Octokit } from "octokit";
-import type { APIRoute } from "astro";
 import { dump } from "js-yaml";
 
 // ---- Constants (override in wrangler.jsonc / secrets) ----
@@ -10,7 +8,6 @@ const OWNER = env.GH_OWNER;
 const REPO = env.GH_REPO;
 const DEFAULT_BRANCH = env.GH_DEFAULT_BRANCH;
 const DESTINATION_FOLDER = env.DESTINATION_MARKDOWN_FOLDER;
-const MAX_PER_DAY = Number(env.MAX_SUBMISSIONS_PER_DAY);
 
 // Token is a secret, only ever read server-side
 const TOKEN = env.GH_TOKEN;
@@ -100,18 +97,12 @@ export async function createRecipe(input: Input): Promise<Recipe> {
   );
   const message = response.choices[0];
   if (message.finish_reason !== "stop") {
-    throw new ActionError({
-      code: "UNPROCESSABLE_CONTENT",
-      message: "Unexpected LLM response.",
-    });
+    throw new Error(`Unexpected LLM finish reason ${message.finish_reason}.`);
   }
   const structuredOutput = message.message.content;
   const { data, error } = recipeSchema.safeParse(structuredOutput);
   if (error) {
-    throw new ActionError({
-      code: "UNPROCESSABLE_CONTENT",
-      message: `Invalid LLM response: ${z.prettifyError(error)}`,
-    });
+    throw new Error(`Invalid LLM response: ${z.prettifyError(error)}`);
   }
   return data;
 }
@@ -131,70 +122,63 @@ export async function submitPr(recipe: Recipe, raw: string) {
   const fileContent = formatRecipe(recipe);
 
   const octokit = new Octokit({ auth: TOKEN });
-  try {
-    // 1. Get current default-branch SHA to fork from
-    const { data: headRef } = await octokit.rest.git.getRef({
-      owner: OWNER,
-      repo: REPO,
-      ref: `heads/${DEFAULT_BRANCH}`,
-    });
+  // 1. Get current default-branch SHA to fork from
+  const { data: headRef } = await octokit.rest.git.getRef({
+    owner: OWNER,
+    repo: REPO,
+    ref: `heads/${DEFAULT_BRANCH}`,
+  });
 
-    // 2. Create the new branch pointing at that SHA
-    await octokit.rest.git.createRef({
-      owner: OWNER,
-      repo: REPO,
-      ref: `refs/heads/${branch}`,
-      sha: headRef.object.sha,
-    });
+  // 2. Create the new branch pointing at that SHA
+  await octokit.rest.git.createRef({
+    owner: OWNER,
+    repo: REPO,
+    ref: `refs/heads/${branch}`,
+    sha: headRef.object.sha,
+  });
 
-    // 3. Commit the recipe markdown onto that branch
-    await octokit.rest.repos.createOrUpdateFileContents({
-      owner: OWNER,
-      repo: REPO,
-      path: filePath,
-      message: `feat: add recipe "${recipe.title}"`,
-      content: Buffer.from(fileContent, "utf-8").toString("base64"),
-      branch,
-    });
+  // 3. Commit the recipe markdown onto that branch
+  await octokit.rest.repos.createOrUpdateFileContents({
+    owner: OWNER,
+    repo: REPO,
+    path: filePath,
+    message: `feat: add recipe "${recipe.title}"`,
+    content: Buffer.from(fileContent, "utf-8").toString("base64"),
+    branch,
+  });
 
-    // 4. Open the PR, embedding the raw submission in the description
-    const rawEscaped = raw.replace(/`/g, "\\`");
-    const prBody = [
-      `**New recipe submission: ${recipe.title}**`,
-      ``,
-      `**Formatted recipe:**`,
-      `See the file \`${filePath}\` in this PR.`,
-      ``,
-      `<details>`,
-      `<summary>Raw submission</summary>`,
-      ``,
-      "```text",
-      rawEscaped,
-      "```",
-      ``,
-      `</details>`,
-    ].join("\n");
+  // 4. Open the PR, embedding the raw submission in the description
+  const rawEscaped = raw.replace(/`/g, "\\`");
+  const prBody = [
+    `**New recipe submission: ${recipe.title}**`,
+    ``,
+    `**Formatted recipe:**`,
+    `See the file \`${filePath}\` in this PR.`,
+    ``,
+    `<details>`,
+    `<summary>Raw submission</summary>`,
+    ``,
+    "```text",
+    rawEscaped,
+    "```",
+    ``,
+    `</details>`,
+  ].join("\n");
 
-    const { data: pr } = await octokit.rest.pulls.create({
-      owner: OWNER,
-      repo: REPO,
-      title: `New recipe: ${recipe.title}`,
-      head: branch,
-      base: DEFAULT_BRANCH,
-      body: prBody,
-      draft: false,
-    });
+  const { data: pr } = await octokit.rest.pulls.create({
+    owner: OWNER,
+    repo: REPO,
+    title: `New recipe: ${recipe.title}`,
+    head: branch,
+    base: DEFAULT_BRANCH,
+    body: prBody,
+    draft: false,
+  });
 
-    return {
-      title: recipe.title,
-      prUrl: pr.html_url,
-    };
-  } catch (err) {
-    throw new ActionError({
-      code: "UNPROCESSABLE_CONTENT",
-      message: err instanceof Error ? err.message : undefined,
-    });
-  }
+  return {
+    title: recipe.title,
+    prUrl: pr.html_url,
+  };
 }
 
 // Simple slugify for a filename

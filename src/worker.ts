@@ -14,9 +14,19 @@ export class SubmissionWorkflow extends WorkflowEntrypoint<Env, Params> {
   async run(event: WorkflowEvent<Params>, step: WorkflowStep) {
     const input = event.payload.input;
 
-    const recipe = await step.do("create recipe", async () => {
-      return createRecipe(input);
-    });
+    const recipe = await step.do(
+      "create recipe",
+      {
+        retries: {
+          limit: 2,
+          delay: 10000,
+          backoff: "exponential",
+        },
+      },
+      async () => {
+        return createRecipe(input);
+      },
+    );
 
     const pr = await step.do("create PR", () => {
       return submitPr(recipe, input.text);
