@@ -1,31 +1,23 @@
 {
   "name": "cookbook",
+  "main": "./src/worker.ts",
   "compatibility_date": "2026-08-22", // Update to the day you deploy
   "vars": {
     "GH_OWNER": "joshwilsonvu",
     "GH_REPO": "cookbook",
     "GH_DEFAULT_BRANCH": "main",
     "DESTINATION_MARKDOWN_FOLDER": "src/data/recipes",
-    "MAX_SUBMISSIONS_PER_DAY": "20",
   },
   "preview_urls": true,
-  "ratelimits": [
-    {
-      "name": "RATE_LIMITER",
-      // An identifier you define, that is unique to your Cloudflare account.
-      // Must be an integer.
-      "namespace_id": "1001",
-      // Limit: the number of tokens allowed within a given period in a single
-      // Cloudflare location
-      // Period: the duration of the period, in seconds. Must be either 10 or 60
-      "simple": {
-        "limit": 2,
-        "period": 60,
-      },
-    },
-  ],
   "ai": {
     "binding": "AI",
     "remote": true,
   },
+  "workflows": [
+    {
+      "binding": "SUBMISSION_WORKFLOW",
+      "name": "SubmissionWorkflow",
+      "class_name": "SubmissionWorkflow",
+    },
+  ],
 }
