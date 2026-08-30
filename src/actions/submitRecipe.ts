@@ -5,7 +5,6 @@ import { Octokit } from "octokit";
 import type { APIRoute } from "astro";
 import { dump } from "js-yaml";
 
-
 // ---- Constants (override in wrangler.jsonc / secrets) ----
 const OWNER = env.GH_OWNER;
 const REPO = env.GH_REPO;
@@ -76,7 +75,7 @@ Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining
 
 export async function createRecipe(input: Input): Promise<Recipe> {
   const response = await env.AI.run(
-    "@cf/google/gemma-4-26b-a4b-it",
+    "zai-org/glm-5.3-flash" as "@cf/zai-org/glm-4.7-flash", // cast for type inference
     {
       messages: [
         {
@@ -97,7 +96,7 @@ export async function createRecipe(input: Input): Promise<Recipe> {
         },
       },
     },
-    { gateway: { id: "cookbook" } },
+    { gateway: { id: "cookbook", metadata: { name: input.name } } },
   );
   const message = response.choices[0];
   if (message.finish_reason !== "stop") {
