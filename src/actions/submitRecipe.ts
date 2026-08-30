@@ -83,16 +83,11 @@ export async function createRecipe(input: Input): Promise<Recipe> {
     output: Output.object({
       schema: recipeSchema,
     }),
-    messages: [
-      {
-        role: "system",
-        content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
-      },
-      {
-        role: "user",
-        content: input.text,
-      },
-    ],
+    instructions: {
+      content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
+      role: "system",
+    },
+    prompt: input.text,
     providerOptions: {
       openai: { reasoningEffort: "medium" },
     },
