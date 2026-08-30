@@ -73,27 +73,28 @@ Example ingredients: ["16 oz pasta", "1 tsp oil", "3 cloves of garlic, minced", 
 Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining 1/2 cup of pasta water.\\n2. In a small skillet over medium heat, heat the oil and fry the garlic for 1 minute.\\n3. ..."`;
 
 export async function createRecipe(input: Input): Promise<Recipe> {
-  const gateway = env.AI.gateway("cookbook");
-  const baseUrl = await gateway.getUrl("openrouter");
-
-  const openrouter = createOpenAI({ baseURL: `${baseUrl}/v1` });
-
-  const { output } = await generateText({
-    model: openrouter("z-ai/glm-5.3-flash"),
-    output: Output.object({
-      schema: recipeSchema,
-    }),
-    instructions: {
-      content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
-      role: "system",
-    },
-    prompt: input.text,
-    providerOptions: {
-      openai: { reasoningEffort: "medium" },
+  const result = await env.AI.run("@cf/openai/gpt-oss-120b", {
+    input: [
+      {
+        role: "system",
+        content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
+      },
+      { role: "user", content: input.text },
+    ],
+    text: {
+      format: {
+        type: "json_schema",
+        name: "Recipe",
+        schema: recipeSchema.toJSONSchema({ io: "input" }),
+      },
     },
   });
 
-  return output;
+  const output = result.output?.find((output) => output.type === "message");
+
+  const data = recipeSchema.parse(output?.content[0]);
+
+  return data;
 }
 
 function formatRecipe(recipe: Recipe): string {
