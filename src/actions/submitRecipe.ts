@@ -24,7 +24,7 @@ export const inputSchema = z.discriminatedUnion("type", [
 ]);
 export type Input = z.infer<typeof inputSchema>;
 
-const recipeSchema = z.object({
+const simpleRecipeSchema = z.object({
   title: z
     .string()
     .min(3)
@@ -45,9 +45,9 @@ const recipeSchema = z.object({
     .max(100)
     .describe("The recipe author's first name."),
   ingredients: z
-    .union([z.array(z.string()), z.record(z.string(), z.array(z.string()))])
+    .array(z.string())
     .describe(
-      "Recipe ingredients in order of usage, formatted as quantity, unit (optional), name, and comma + pre-preparation instructions (optional). Strongly prefer a single array of ingredients, unless the recipe is clearly broken into distinct parts (ex. a dish and an accompanyment), in which case provide an object mapping part names to ingredients for each part.",
+      "Recipe ingredients in order of usage, formatted as quantity, unit (optional), name, and comma + pre-preparation instructions (optional).",
     ),
   instructions: z
     .string()
@@ -62,6 +62,13 @@ const recipeSchema = z.object({
     .nullish()
     .describe(
       "A concise, food-magazine-style caption describing the visual appearance of the completed recipe.",
+    ),
+});
+const recipeSchema = simpleRecipeSchema.extend({
+  ingredients: z
+    .union([z.array(z.string()), z.record(z.string(), z.array(z.string()))])
+    .describe(
+      "Recipe ingredients in order of usage, formatted as quantity, unit (optional), name, and comma + pre-preparation instructions (optional). Strongly prefer a single array of ingredients, unless the recipe is clearly broken into distinct parts (ex. a dish and an accompanyment), in which case provide an object mapping part names to ingredients for each part.",
     ),
 });
 export type Recipe = z.infer<typeof recipeSchema>;
@@ -85,14 +92,14 @@ export async function createRecipe(input: Input): Promise<Recipe> {
       format: {
         type: "json_schema",
         name: "Recipe",
-        schema: recipeSchema.toJSONSchema({ io: "input" }),
+        schema: simpleRecipeSchema.toJSONSchema({ io: "input" }),
       },
     },
   });
 
   const output = result.output?.find((output) => output.type === "message");
 
-  const data = recipeSchema.parse(output?.content[0]);
+  const data = simpleRecipeSchema.parse(output?.content[0]);
 
   return data;
 }

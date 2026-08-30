@@ -9,6 +9,9 @@
     "GH_DEFAULT_BRANCH": "main",
     "DESTINATION_MARKDOWN_FOLDER": "src/data/recipes",
   },
+  "secrets": {
+    "required": ["GH_TOKEN"],
+  },
   "preview_urls": true,
   "ai": {
     "binding": "AI",
