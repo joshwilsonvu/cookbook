@@ -71,9 +71,16 @@ Example ingredients: ["16 oz pasta", "1 tsp oil", "3 cloves of garlic, minced", 
 Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining 1/2 cup of pasta water.\\n2. In a small skillet over medium heat, heat the oil and fry the garlic for 1 minute.\\n3. ..."`;
 
 export async function createRecipe(input: Input): Promise<Recipe> {
-  const response = await env.AI.run(
-    "z-ai/glm-5.3-flash" as "@cf/zai-org/glm-4.7-flash", // cast for type inference, OpenRouter BYOK integration
-    {
+  const gateway = env.AI.gateway("cookbook");
+  const baseUrl = await gateway.getUrl("openrouter");
+  const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+    // ← append path
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "z-ai/glm-5.3-flash",
       messages: [
         {
           role: "system",
@@ -92,14 +99,16 @@ export async function createRecipe(input: Input): Promise<Recipe> {
           schema: recipeSchema.toJSONSchema({ io: "input" }),
         },
       },
-    },
-    { gateway: { id: "cookbook", metadata: { name: input.name } } },
-  );
-  const message = response.choices[0];
-  if (message.finish_reason !== "stop") {
-    throw new Error(`Unexpected LLM finish reason ${message.finish_reason}.`);
+    }),
+  });
+
+  const json = await response.json<any>();
+  const choice = json.choices[0];
+  if (choice.finish_reason !== "stop") {
+    // ← finish_reason is on choice
+    throw new Error(`Unexpected LLM finish reason ${choice.finish_reason}.`);
   }
-  const structuredOutput = message.message.content;
+  const structuredOutput = choice.message.content; // ← not message.message.content
   const { data, error } = recipeSchema.safeParse(structuredOutput);
   if (error) {
     throw new Error(`Invalid LLM response: ${z.prettifyError(error)}`);
