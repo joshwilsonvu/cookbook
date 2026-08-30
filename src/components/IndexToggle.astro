@@ -3,7 +3,9 @@ const isHome = Astro.routePattern === "/";
 ---
 
 <p class="text-blue-600">
-  <a href={isHome ? "/by-author" : "/"}
+  <a class="hover:underline focus:underline" href={isHome ? "/by-author" : "/"}
     >Group by {isHome ? "author" : "category"}</a
+  > · <a class="hover:underline focus:underline" href="/submit"
+    >Submit a recipe</a
   >
 </p>
