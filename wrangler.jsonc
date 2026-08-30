@@ -20,4 +20,10 @@
       "class_name": "SubmissionWorkflow",
     },
   ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+  },
 }
