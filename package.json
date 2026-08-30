@@ -13,10 +13,12 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^4.0.52",
     "@astrojs/check": "^0.9.10",
     "@astrojs/cloudflare": "^14.2.3",
     "@astrojs/preact": "^6.0.4",
     "@iconify-json/lucide": "^1.2.125",
+    "ai": "^7.0.85",
     "astro": "^7.2.4",
     "astro-icon": "^1.2.0",
     "entities": "^7.0.1",

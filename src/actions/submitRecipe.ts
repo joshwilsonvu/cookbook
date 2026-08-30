@@ -2,6 +2,8 @@ import { z } from "astro/zod";
 import { env } from "cloudflare:workers";
 import { Octokit } from "octokit";
 import { dump } from "js-yaml";
+import { generateText, Output } from "ai";
+import { createOpenAI } from "@ai-sdk/openai";
 
 // ---- Constants (override in wrangler.jsonc / secrets) ----
 const OWNER = env.GH_OWNER;
@@ -73,47 +75,30 @@ Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining
 export async function createRecipe(input: Input): Promise<Recipe> {
   const gateway = env.AI.gateway("cookbook");
   const baseUrl = await gateway.getUrl("openrouter");
-  const response = await fetch(`${baseUrl}/v1/chat/completions`, {
-    // ← append path
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "z-ai/glm-5.3-flash",
-      messages: [
-        {
-          role: "system",
-          content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
-        },
-        {
-          role: "user",
-          content: input.text,
-        },
-      ],
-      reasoning_effort: "medium",
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "Recipe",
-          schema: recipeSchema.toJSONSchema({ io: "input" }),
-        },
-      },
+
+  const openrouter = createOpenAI({ baseURL: `${baseUrl}/v1` });
+
+  const { output } = await generateText({
+    model: openrouter("z-ai/glm-5.3-flash"),
+    output: Output.object({
+      schema: recipeSchema,
     }),
+    messages: [
+      {
+        role: "system",
+        content: `${RECIPE_SYSTEM_PROMPT}\nThe user's name is ${input.name}.`,
+      },
+      {
+        role: "user",
+        content: input.text,
+      },
+    ],
+    providerOptions: {
+      openai: { reasoningEffort: "medium" },
+    },
   });
 
-  const json = await response.json<any>();
-  const choice = json.choices[0];
-  if (choice.finish_reason !== "stop") {
-    // ← finish_reason is on choice
-    throw new Error(`Unexpected LLM finish reason ${choice.finish_reason}.`);
-  }
-  const structuredOutput = choice.message.content; // ← not message.message.content
-  const { data, error } = recipeSchema.safeParse(structuredOutput);
-  if (error) {
-    throw new Error(`Invalid LLM response: ${z.prettifyError(error)}`);
-  }
-  return data;
+  return output;
 }
 
 function formatRecipe(recipe: Recipe): string {
