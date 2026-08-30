@@ -9,11 +9,16 @@ export const server = {
     accept: "form",
     input: inputSchema,
     handler: async (input, context) => {
-      env.SUBMISSION_WORKFLOW.create({
+      const workflow = await env.SUBMISSION_WORKFLOW.create({
         params: {
           input,
         },
       });
+      console.log(
+        `Created workflow ${workflow.id}, status: ${await workflow.status()}`,
+      );
+
+      return workflow;
     },
   }),
 };

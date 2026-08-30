@@ -75,7 +75,7 @@ Example instructions: "1. In a pot, cook pasta to al dente and strain, retaining
 
 export async function createRecipe(input: Input): Promise<Recipe> {
   const response = await env.AI.run(
-    "zai-org/glm-5.3-flash" as "@cf/zai-org/glm-4.7-flash", // cast for type inference
+    "openrouter/zai-org/glm-5.3-flash" as "@cf/zai-org/glm-4.7-flash", // cast for type inference, OpenRouter BYOK integration
     {
       messages: [
         {
