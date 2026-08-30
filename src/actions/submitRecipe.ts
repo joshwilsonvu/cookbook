@@ -97,10 +97,16 @@ export async function createRecipe(input: Input): Promise<Recipe> {
     },
   });
 
-  const output = result.output?.find((output) => output.type === "message");
+  const output = result.output?.find((output) => output.type === "message")
+    ?.content[0];
+  if (!output) {
+    throw new Error("No output");
+  }
+  if (output.type === "refusal") {
+    throw new Error(`Refused: ${output.refusal}`);
+  }
 
-  const data = simpleRecipeSchema.parse(output?.content[0]);
-
+  const data = simpleRecipeSchema.parse(JSON.parse(output.text));
   return data;
 }
 
